@@ -1,2 +1,2 @@
 # This Repository is mainly made for daily homeworks
-## owened by sundra bomjan, GCIT
+## owned by sundra bomjan, GCIT
