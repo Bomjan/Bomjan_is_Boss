@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:Arial, sans-serif;
+}
+.zam {
+    width: 700px;
+    height: 1010px;
+    display: flex;
+}
+.col1{
+    flex: 3;
+    background-color: rgb(220, 218, 209);
+}
+.col2{
+    flex: 5;
+    background-color: rgb(219, 226, 222);
+}
+
+.name-card {
+    width:  130%;
+    height: 160px;
+    background-color: rgb(35, 26, 26);
+    position: relative;
+    top: 60px;
+    left: -30%;
+    z-index: 1;
+}
+
+.dp img{
+    width: 200px;
+    height: 200px;
+    z-index: 1000;
+    position: relative;
+    top: 35px;
+    left: 20px;
+    border-radius: 50%;
+    border: 7px solid  rgb(242, 237, 233);
+}
+
+.name {
+    position: relative;
+    top: 50px;
+    left: 200px;
+    color: rgb(201, 168, 103);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.info{
+
+    position: relative;
+    top: 90px;
+    padding-left: 40px;
+}
+.info p{
+    padding-bottom: 5px;
+}
+
+.edu {
+    position: relative;
+    top: 130px;
+    padding-left: 50px;
+}
+.line {
+    width: 95%;
+    height: 2px;
+    background-color: #978e8e;
+    margin-top: 5px;
+    margin-bottom: 16px;
+}
+.school{
+    font-size: large;
+}
+.school-location {
+    font-size: 17px;
+    font-weight: bold;
+}
+.year{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 18px;
+}
+.edu p{
+    margin: 3px;
+}
+
+.skill {
+    position: relative;
+    top: 145px;
+    
+    padding-left: 50px;
+}
+
+.skill .skills {
+    padding-bottom: 5px;
+}
+
+.language {
+    position: relative;
+    top: 170px;
+    
+    padding-left: 50px;
+}
+ .language p {
+    padding-bottom: 5px;
+ }
+
+ .about, .experience, .reference {
+    border: 2px solid black;
+    width: 100%;
+    top: 60px;
+    position: relative;
+ }
+ .about {
+    height: 150px;
+ }
+ .experience{
+    height: 470px;
+ }
+ .reference{
+    height: 160px;
+ }
+
+ .about h3, .experience h3, .reference h3 {
+    margin: 20px 0 0 30px;
+    color: #503f36;
+ }
+
+ .underline {
+    width: 90%;
+    height: 2px;
+    background-color: #bbb2b2;
+    margin: 10px 0 0 30px;
+ }
+
+ .about p {
+    margin: 30px auto auto 30px;
+}
+
+.refer{
+    display: flex;
+}
+.ref1, .ref2{
+    flex: 1;
+    border: 2px solid red;
+    height: 100px;
+    padding: 10px 0 0 30px;
+}
