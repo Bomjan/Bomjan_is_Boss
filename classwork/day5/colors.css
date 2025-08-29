@@ -1,0 +1,25 @@
+.container1{
+    width: 800px;
+    height: 800px;
+    background-color: hsl(112, 33%, 47%);
+}
+.container2 {
+    width: 400px;
+    height: 400px;
+    background-color: hsl(14, 100%, 54%);
+    font-size: 12px;
+    margin: 20px 0 50px 100px;
+    
+}
+.container3 {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(45, 34, 65, 0.8);
+}
+.container2 p{
+    font-size: 2em;
+    font-style: none;
+    text-decoration: none;
+    text-transform: lowercase;
+    
+}

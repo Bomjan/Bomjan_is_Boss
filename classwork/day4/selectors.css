@@ -1,0 +1,13 @@
+.title {
+    color: blue;
+}
+#content {
+    color: brown;
+}
+a[target]{
+    color: chartreuse;
+}
+
+a[href^="pp"]{
+    color: aquamarine;
+}
