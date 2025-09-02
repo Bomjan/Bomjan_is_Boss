@@ -1,0 +1,19 @@
+#title {
+    margin: 40px;
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid red;
+    display: flexbox;
+    animation: typing 3s steps(14),
+    blink .7s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 14ch }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
