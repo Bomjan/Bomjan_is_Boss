@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "Precious";
+    src: url("Fonts/Precious.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Avran";
+    src: url("Fonts/Avran.ttf") format("opentype");
+}
+@font-face {
+    font-family: "process";
+    src: url("Fonts/process.ttf") format("truetype");
+}
+h1 {
+    font-family: "Precious", sans-serif;
+
+}
+h2 {
+    font-family: "Avran", sans-serif;
+}
+h3 {
+    font-family: "process", sans-serif;
+}
+
+body {
+    background-color: rgb(182, 150, 150);
+}
+
+nav a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer{
+    background-color: hsla(39, 81%, 49%, 0.7);
+    font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+    font-size: 0.7em;
+}
