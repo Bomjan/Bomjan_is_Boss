@@ -1,0 +1,422 @@
+@font-face {
+  font-family: 'Rolling';
+  src: url('./Fonts/rolling.otf') format('truetype');
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./Fonts/Roboto-VariableFont_wdth\,wght.ttf");
+}
+
+:root {
+  --color1: #0d1b2a;
+  --color2: #1b263b;
+  --color3: #415a77;
+  --color4: #778da9;
+  --color5: #e0e1dd;
+  
+  --font1: "Roboto";
+  --font2: "Rolling";
+}
+
+/* For Home Page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: var(--font1);
+  background-color: var(--color5);
+  color: var(--color2);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: var(--color1);
+  color: var(--color5);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between; /* logo left, coin middle, buttons right */
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+   width: 60px;
+  height: 60px;
+}
+
+/* Coin + count */
+.coin-container {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* space between coin and number */
+}
+.coin img {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+.coin {
+  width: 30px; /* shrink coin */
+  height: 30px;
+}
+}
+/* Buttons */
+button {
+  background: var(--color3);
+  color: var(--color5);
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font1);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--color2);
+  transform: scale(1.05);
+}
+
+/* Main Section */
+main {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+main h1 {
+  font-family: var(--font2);
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--color1);
+}
+
+main button {
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  background: var(--color2);
+  color: var(--color5);
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 50px;
+}
+
+footer h3 {
+  margin-bottom: 15px;
+  font-family: var(--font2);
+  color: var(--color4);
+}
+
+footer textarea {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid var(--color4);
+  background: var(--color5);
+  font-family: var(--font1);
+}
+
+footer a {
+  color: var(--color4);
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* For login and sign up page */
+
+.container1{
+  width: 300px;
+
+  margin: 100px auto;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 20px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container2{
+  width: 300px;
+  margin: 100px auto;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 20px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title{
+  font-family: var(--font2);
+  color: var(--color2);
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.field {
+  width: 88%;
+  margin-bottom: 18px;
+  position: relative;
+}
+.field label {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font1), sans-serif;
+  color: var(--color4);
+  background-color: #c7d1de;
+  position: relative;
+  top: 8px;
+  left: 10px;
+  padding: 1px 8px;
+  border-radius: 4px;
+
+}
+.field input {
+  width: 90%;
+  padding: 10px;
+  border: 1.5px solid var(--color4);
+  border-radius: 6px;
+  outline: none;
+  color: var(--color3);
+  font-size: 14px;
+}
+.field input:focus {
+  border: 0.7px solid var(--color3);
+  outline: 1.5px solid var(--color4);
+}
+.remember-me {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.remember-me input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color4);
+}
+.remember-me label p {
+  color:var(--color3);
+  padding-left: 6px;
+  font-size: 14px;
+}
+.forgot {
+  margin-left: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  color:var(--color3);
+}
+.forgot:hover {
+  color: var(--color2);
+  text-decoration: underline;
+}
+.submit {
+  width: 90%;
+}
+.submit button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--color4);
+  color: var(--color5);
+  font-size: 16px;
+  font-weight: 600;
+}
+.submit button:hover {
+  background-color: var(--color3);
+  transform: scale(1.01);
+  transition: 0.3s ease;
+}
+.submit p {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+}
+.submit p a {
+  text-decoration: none;
+  color:#778da9;
+  font-weight: bold;
+}
+
+/* in here, simple yet beautiful logic is being implemented*/
+input[type="radio"] {
+  display: none;
+}
+
+#register:checked ~ .container1 {
+  display: block;
+}
+#register:checked ~ .container2 {
+  display: none;
+}
+#login:checked ~ .container1 {
+  display: none;
+}
+#login:checked ~ .container2 {
+  display: block;
+}
+
+.switch-link {
+  color: var(--color1);
+  font-weight: 900;
+}
+
+
+
+/* For Profile Page */
+.profile-container{
+  margin: 20px auto;
+  max-width: 900px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color3);
+  font-family: var(--font1);
+  border-radius: 4px;
+}
+
+.profile-container .img-container{
+  width: 105px;
+  margin: auto;
+}
+.profile-container .img-container img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px dashed var(--color2);
+}
+
+.profile-container .img-container .username {
+  margin: 5px auto 0 20px;
+}
+.profile-container .img-container .edit{
+  position: relative;
+  top: -125px;
+  left: 85px;
+  width: 20px;
+  height: 20px;
+  color: var(--color1);
+}
+
+.show{
+  display: flex;
+  justify-content: space-around;
+  margin: 12px 0;
+}
+
+.show .in {
+  margin: 0 90px;
+}
+.line{
+  width: 90%;
+  height: 2px;
+  background-color: var(--color4);
+}
+
+.statistics {
+  border: 3px solid var(--color2);
+  background-color: var(--color3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  padding: 5px 18px;
+  margin:12px 0;
+  border-radius: 12px;
+
+}
+.statistics .row{
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 5px;
+  padding: 4px 3px;
+  background-color: var(--color3);
+  border-radius: 6px;
+}
+.statistics .row:hover {
+  background-color: var(--color4);
+}
+.value, .key {
+  padding: 0 10px;
+}
+.title-profile {
+  font-family: var(--font2);
+  margin: 10px auto 4px 52px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.leaderboard{
+  display: table;
+  width: 90%;
+  border: none;
+}
+.user {
+  display: table-row;
+  width: 100%;
+}
+.user:hover{
+  transform: scale(1.05);
+  padding: 12px;
+  background-color: var(--color4);
+  border-radius: 10px;
+  transition: 0.5s ease;
+}
+.user .in{
+  display: table-cell;
+  padding: 8px 5px;
+
+}
+.show  i {
+  color: var(--color4);
+  padding-right: 9px;
+}
+.me .in{
+  background-color: var(--color4);
+}
+.profile-container > a{
+  position: relative;
+  left: 420px;
+}
+
+
+/* * Admin Dashboard */
+
+.dashboard-container-admin {
+  background-color: var(--color4);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
