@@ -5,18 +5,18 @@ def to_b(num):
         return "Not now bro!"
     else:
 
-        backnum = 0
+        back_num = 0
         if type(num) == type(0.0):
-            num, backnum = str(num).split(".")
+            num, back_num = str(num).split(".")
         
         num = int(num)
-        length = len(backnum)
-        backnum = int(backnum) / (10 ** length)
+        length = len(back_num)
+        back_num = int(back_num) / (10 ** length)
 
-        print(backnum)
+        print(back_num)
 
         binary = []
-        backbinary = []
+        back_binary = []
         
         while num>0:
             binary.append(str(num%2))
@@ -24,19 +24,19 @@ def to_b(num):
         
         binary.reverse()
         counter = 10
-        while counter > 0 and backnum != 0:
-            backnum *= 2
-            if backnum >= 1:
-                backbinary.append("1")
-                backnum -= 1
+        while counter > 0 and back_num != 0:
+            back_num *= 2
+            if back_num >= 1:
+                back_binary.append("1")
+                back_num -= 1
             else:
-                backbinary.append("0")
+                back_binary.append("0")
             counter -= 1
             
-        backbinary.reverse()
+        back_binary.reverse()
 
         front = "".join(binary)
-        back = "".join(backbinary)
+        back = "".join(back_binary)
         return front + "." + back 
 number = input("Enter Number: ")
 number = float(number)
