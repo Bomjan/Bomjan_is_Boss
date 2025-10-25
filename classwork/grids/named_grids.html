@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .a{grid-area: a;}
+        .b{grid-area: b;}
+        .c{grid-area: c;}
+        .d{grid-area: d;}
+        .e{grid-area: e;}
+        .f{grid-area: f;}
+        .g{grid-area: g;}
+        .h{grid-area: h;}
+        .i{grid-area: i;}
+        .j{grid-area: j;}
+        .x{grid-area: x;} */
+
+        .container{
+            display: grid;
+            gap: 2px;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            /* grid-template-areas: 
+            "a a a a a a"
+            "b b c c d d"
+            "e e e e f f"
+            "g g g x h h"
+            "i i i j j j"
+            ; */
+            height: 400px;
+            width: 100%;
+        }
+        .items{
+            background-color: #965902;
+            border-radius: 6px;
+        }
+        .x{grid-column: 1/-1;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items a"></div>
+        <div class="items b"></div>
+        <div class="items c"></div>
+        <div class="items d"></div>
+        <div class="items e"></div>
+        <div class="items f"></div>
+        <div class="items g"></div>
+        <div class="items h"></div>
+        <div class="items i"></div>
+        <div class="items j"></div>
+        <div class="items x"></div>
+    </div>
+</body>
+</html>
