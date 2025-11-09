@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(180deg, #2ebe2b, #be23ac, #3c57de);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +11,7 @@ body {
   color: #fff;
 }
 
+/* container that holds the game UI and canvas */
 .game-container {
   text-align: center;
   background: rgba(0, 0, 0, 0.6);
@@ -83,7 +84,7 @@ img.hidden {
   display: none;
 }
 
-/* Spinning effect for player */
+/* optional Spinning effect for player */
 @keyframes spin {
   from {
     transform: rotate(0deg);
