@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .container{
-            margin: 100px auto;
-            background-color: #c7f3d7;
-            width: 600px;
-            height: 500px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-        }
-        .box{
-            background-color: #03bd9b;
-            width: 250px;
-            height: 350px;
-            text-align: center;
-            align-content: center;
-        }
-        .rotate:hover{
-            /* background-color: #016e5a; */
-            background-image: radial-gradient(#03bd9b, #016e5a);
-            transform: rotateX(-5deg) rotateY(30deg) rotateZ(5deg);
-            transition: all 1.2s;
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Famous Scientists</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="box rotate">
-            3D Transformations
+      <div class="card-container">
+        <div class="upper"><h2>Market Growth</h2></div>
+        <div class="mid">
+          <p>Global e-commerce revenue increased significantly last year.</p>
         </div>
+        <div class="lower"><p>Growth: 25% YoY</p></div>
+      </div>
+
+      <div class="card-container">
+        <div class="upper"><h2>Remote Work Trends</h2></div>
+        <div class="mid">
+          <p>More companies are adopting hybrid and remote models.</p>
+        </div>
+        <div class="lower"><p>Percentage: 68% of companies</p></div>
+      </div>
+
+      <div class="card-container">
+        <div class="upper"><h2>Cybersecurity Spending</h2></div>
+        <div class="mid">
+          <p>
+            Organizations are increasing budgets to protect against cyber
+            threats.
+          </p>
+        </div>
+        <div class="lower"><p>Estimated: $150B in 2025</p></div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
