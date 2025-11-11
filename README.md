@@ -1,12 +1,9 @@
 # Frontend Web Development 1
 
+**Bomjan, Gyalpozhing College of Information Technology**
+
 This repository is mainly created for **daily homework and practice tasks** in **Frontend Web Development**.  
 It documents the learning journey of building web pages using **HTML**, **CSS**, and **JavaScript (DOM)**.
-
-## Owner
-
-**Sundra Bomjan**  
-GCIT – Gyalpozhing College of Information Technology
 
 ---
 
