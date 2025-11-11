@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document object Manipulation</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="form" id="form">
+      <div id="login">
+        <form action="" method="post" id="login-form">
+          <h2>Login</h2>
+          <div id="login-error"></div>
+          <div class="field">
+            <input type="text" placeholder="" id="username" />
+            <label for="username">Email / Phone</label>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="" id="password" />
+            <label for="password">Password</label>
+          </div>
+          <p style="user-select: none">
+            Haven't signed up yet.
+            <span id="go-to-signup" style="cursor: pointer">Create One</span>
+          </p>
+          <button type="submit" class="btn">Login</button>
+        </form>
+        <div id="register-msg" style="display: none">
+          <h1>Please Register</h1>
+        </div>
+      </div>
+      <div id="register">
+        <form action="" method="post" id="register-form" style="display: none">
+          <h2>Register</h2>
+          <div id="register-error"></div>
+          <div class="field">
+            <input type="text" placeholder="" id="contact" />
+            <label for="username">Email / Phone</label>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="" id="pass1" />
+            <label for="password">Enter Password</label>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="" id="pass2" />
+            <label for="password">Confirm Password</label>
+          </div>
+          <p style="user-select: none">
+            Already have an account?
+            <span id="go-to-login" style="cursor: pointer">Login</span>
+          </p>
+          <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <div id="login-msg">
+          <h1>Please Login</h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
