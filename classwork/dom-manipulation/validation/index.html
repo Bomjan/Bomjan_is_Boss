@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        margin-top: 100px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border: 2px solid rgb(169, 211, 206);
+        border-radius: 10px;
+      }
+      .field {
+        margin: 8px 12px;
+        width: 100%;
+      }
+      input {
+        padding: 10px 10px;
+        border-radius: 5px;
+        width: calc(100% - 30px);
+        margin-right: -10px;
+        outline: none;
+        font-size: 20px;
+        border: 1px solid rgb(28, 178, 53);
+        &:focus {
+          outline: none;
+        }
+      }
+      label {
+        position: relative;
+        left: 10px;
+        top: -55px;
+        font-size: 12px;
+        background-color: #fff;
+        padding: 0 6px;
+        border: 1px solid black;
+        border-radius: 10px;
+        border: 1px solid rgb(28, 178, 53);
+        color: rgb(118, 4, 128);
+      }
+      button {
+        padding: 10px 90px;
+        border-radius: 30px;
+        background-color: #0cada3;
+        font-size: 14px;
+        border: none;
+        &:hover {
+          background-color: #08716a;
+          color: aliceblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="post">
+        <!-- <p class="username-error"></p> -->
+        <div class="field">
+          <input
+            type="text"
+            name="username"
+            placeholder=""
+            id="username"
+            pattern="[a-zA-Z1-9]{5,12}"
+            title="we only accept alphabets and numbers, makesure it is 5 to 12 character long"
+          />
+          <label for="username">Username</label>
+        </div>
+        <div class="field">
+          <input
+            type="password"
+            name="password"
+            placeholder=""
+            title="Please have atleast a upper case letter, a lowercase letter, a digit, and the password must be atleast 8 characters"
+            id="password"
+            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}"
+          />
+          <label for="password">Password</label>
+        </div>
+        <div class="field">
+          <input
+            type="text"
+            name="contact"
+            placeholder=""
+            title="We only accept digits, and the length must be exactly 10 characters"
+            id="contact"
+            pattern="[0-9]{10}"
+          />
+          <label for="contact">Contact</label>
+        </div>
+        <div class="field">
+          <input
+            type="email"
+            name="email"
+            placeholder=""
+            title=""
+            id="email"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          />
+          <label for="password">Email</label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      // Part B, Question 5
+      const regex1 = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+      const x = "12-12-2025";
+      console.log(st.match(regex1));
+
+      // q 6
+      const regex2 = /[0-9]{9}/;
+      const text = "Hello there, how you Doing";
+    </script>
+  </body>
+</html>

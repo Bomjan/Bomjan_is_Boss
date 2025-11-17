@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f1f3f4;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 380px;
+}
+
+#login {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #202124;
+}
+
+.form-field {
+  margin-bottom: 18px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #dadce0;
+  border-radius: 4px;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-field input:focus {
+  border-color: #1a73e8;
+}
+
+.form-field .error {
+  color: #d93025;
+  font-size: 13px;
+  margin-top: 4px;
+  display: none; /* hide by default */
+}
+
+/* When there is an error */
+.form-field.error input {
+  border-color: #d93025;
+}
+
+.form-field.error .error {
+  display: block;
+}
+
+.btn {
+  width: 100%;
+  background: #1a73e8;
+  padding: 12px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #1669c1;
+}
+
+#error1,
+#error2 {
+  color: red;
+  padding: 5px;
+}

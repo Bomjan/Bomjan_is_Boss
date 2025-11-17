@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Input Validation</h1>
+      <form action="" id="form">
+        <div>
+          <label for="username">Username</label>
+          <input type="text" id="username" />
+          <p class="message"></p>
+        </div>
+        <div>
+          <input type="submit" value="Submit Now" />
+        </div>
+      </form>
+    </div>
+    <script>
+      document.getElementById("form").addEventListener("submit", (e) => {
+        const username = document.getElementById("username").value;
+        e.preventDefault();
+        if (username == "") {
+          document.querySelector(".message").textContent =
+            "Username is required";
+          document.querySelector(".message").style.color = "red";
+          document.getElementById("username").style.border = "0.6px solid red";
+        } else if (username.length < 4 || username.length > 20) {
+          document.querySelector(".message").textContent =
+            "Username  should be in length range of 4 to 20 characters";
+          document.querySelector(".message").style.color = "red";
+          document.getElementById("username").style.border = "0.6px solid red";
+        } else {
+          document.querySelector(".message").textContent = "";
+          document.querySelector(".message").style.color = "green";
+          document.getElementById("username").style.border =
+            "0.6px solid green";
+        }
+      });
+    </script>
+  </body>
+</html>
