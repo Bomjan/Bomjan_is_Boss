@@ -73,7 +73,7 @@
             name="username"
             placeholder=""
             id="username"
-            pattern="[a-zA-Z1-9]{5,12}"
+            pattern="[a-zA-Z0-9]{5,12}"
             title="we only accept alphabets and numbers, makesure it is 5 to 12 character long"
           />
           <label for="username">Username</label>
@@ -116,13 +116,67 @@
     </div>
     <script>
       // Part B, Question 5
-      const regex1 = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
-      const x = "12-12-2025";
-      console.log(st.match(regex1));
+      const regex1 = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/gm;
+      const date = "12-12-2025";
+      console.log(`regex 1 test : ${regex1.test(date)}`);
 
       // q 6
-      const regex2 = /[0-9]{9}/;
-      const text = "Hello there, how you Doing";
+      const regex2 = /\b[A-Z][a-zA-Z]*\b/gm;
+      const text1 = "Hello there, how You Doing";
+      console.log(text1.match(regex2));
+
+      // question 7
+      const regex3 = /#[a-zA-Z]*/gm;
+      const text2 = "I love #coding and #webdev";
+      console.log(text2.match(regex3));
+
+      // question 8
+      const regex4 = /^https?:\/\/[a-zA-Z0-9-]+\.[a-zA-Z]{2,}.*$/;
+      const link = "https://bomjan.dpdns.org";
+      console.log(`regex 4 test: ${regex4.test(link)}`);
+
+      // question 9
+      const regex5 = /apple/gi;
+      const text3 = "Apple is red. Apple can be sold to a child";
+      console.log(text3.replace(regex5, "orange"));
+
+      // question 10
+      const regex6 = /[a-zA-Z0-9]{6}/gm;
+      const text4 = "rtyu89";
+      console.log(`regex 6 test: ${regex6.test(text4)}`);
+
+      // PART 3, debugging and application
+      // question 11
+
+      // <input type="text" pattern="[a-z]{1-5}" title="Lowercase only, 1-5 chars">
+      // The error is that, in regex quantifiers, we use comma to define range not dashes. So the corrected version will be
+      // <input type="text" pattern="[a-z]{1,5}" title="Lowercase only, 1-5 chars">
+
+      // question 12
+      const regex = /[0-9]{2,4}/g;
+      const text = "I have 12345 apples and 67 bananas";
+      console.log(text.match(regex));
+      // The given regex will match the numeric characters with the length between 2 to 4.
+      // So, it will match "1234" from "12345" and "67"
+
+      // question 13
+      const regex7 = /^[a-zA-Z][a-zA-Z0-9_]{2,15}$/;
+      const text5 = "sundra_00";
+      console.log(`regex 7 test: ${regex7.test(text5)}`);
+
+      // question 14
+      const regex8 = /\b[a-zA-Z]+ing\b/gm;
+      const text6 = `
+        i love playing guitar
+        i love singing
+        but i don't like dancing
+      `;
+      console.log(text6.match(regex8));
+
+      // question 14
+      const regex9 = /^(0?[1-9]|1[0-2]):[0-5][0-9]\s?(AM|PM)$/;
+      const time = "10:50 PM";
+      console.log(`regex 9 test: ${regex9.test(time)}`);
     </script>
   </body>
 </html>
