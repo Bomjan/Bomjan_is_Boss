@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo List - Minimal BW</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="todo-panel">
+        <header class="todo-header">
+          <h1>TODO</h1>
+          <p>Write. Do. Repeat.</p>
+        </header>
+
+        <section class="todo-input-section">
+          <small id="message"></small>
+          <form id="todo-form">
+            <input
+              type="text"
+              id="todo-input"
+              placeholder="Type your task and press Add"
+              autocomplete="off"
+            />
+
+            <button type="submit" id="add-btn">Add</button>
+          </form>
+          <p id="error-msg" class="error-msg"></p>
+        </section>
+
+        <section class="todo-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </section>
+
+        <section class="todo-list-section">
+          <ul id="todo-list">
+            <!-- JS will inject <li> items here -->
+          </ul>
+        </section>
+
+        <footer class="todo-footer">
+          <span id="item-count">0 items</span>
+          <button id="clear-completed" class="clear-btn">
+            Clear completed
+          </button>
+        </footer>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
