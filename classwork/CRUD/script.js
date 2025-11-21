@@ -1,40 +1,79 @@
 const $ = (id) => document.getElementById(id);
-const form = document.getElementById("todo-form");
-
-form.addEventListener("submit", (e) => {
+document.getElementById("todo-form").addEventListener("submit", (e) => {
+  // get the task
   e.preventDefault();
   const task = $("todo-input").value;
 
+  // form level validataion on task
   if (task.length == 0 || task == "") {
-    const error = "Task cannot be empty.";
-    const message = $("message");
+    const error = "task cannot be empty";
+    const message = document.getElementById("message");
     message.textContent = error;
     message.style.color = "red";
-    $("todo-input").style.border = "0.6px solid red";
+    const inputFeild = document.getElementById("todo-input");
+    inputFeild.style.border = "1px solid red";
   } else {
-    $("message").innerHTML = "";
-    $("todo-input").style.border = "0.6px solid black";
-
-    // create and append the element
-    const place = $("todo-list");
-    // const newElement = document.createElement("li");
-    // newElement.textContent = task;
-    // newElement.style.padding = "4px 8px";
-    // const line = document.createElement("hr");
-    // place.appendChild(newElement);
-    // place.appendChild(line);
-
-    place.innerHTML += `
-    <div class="list-item">
-      <li id="complete">${task}</li>
-      <div> 
-        <button id="mark-complete">Edit</button>
-        <button id="delete-button">Delete</button>
-      </div>
-    </div>
-    `;
-
-    // Clear the input field
-    $("todo-input").value = "";
+    const message = document.getElementById("message");
+    message.textContent = "";
+    const inputFeild = document.getElementById("todo-input");
+    inputFeild.style.border = "1px solid black";
   }
+  // show place to show data
+
+  const place = $("todo-list");
+  const newElement = document.createElement("li");
+  const hrline = document.createElement("hr");
+  newElement.innerHTML = `
+    <span id = "complete">${task}</span>
+    <div>
+      <button id = "mark-complete" onclick="editItem(this)">Edit</button>
+      <button id = "save" onclick = "saveChanges(this)" style="display: none">Save</button>
+      <button id = "delete-button" onclick="deleteItem(this)">Delete</button>
+    </div>`;
+  newElement.style.display = "flex";
+  newElement.style.justifyContent = "space-between";
+  // alone with button
+
+  place.appendChild(newElement);
+  place.appendChild(hrline);
+
+  const complete = newElement.querySelector("#complete");
+  complete.style.cursor = "pointer";
+  complete.style.userSelect = "none";
+  complete.addEventListener("dblclick", () => {
+    complete.style.textDecoration =
+      complete.style.textDecoration == "line-through" ? "none" : "line-through";
+  });
+  // clear
+  $("todo-input").value = "";
+  //  after every input adding border btw them
+  updateCount();
 });
+
+const deleteItem = (e) => {
+  const listElement = e.parentElement.parentElement;
+  listElement.nextElementSibling.remove();
+  listElement.remove();
+  updateCount();
+};
+
+const editItem = (e) => {
+  data = e.parentElement.previousElementSibling;
+  // const s = prompt("Edit", data.textContent);
+  // data.textContent = s;
+  data.contentEditable = true;
+  $("mark-complete").style.display = "none";
+  $("save").style.display = "block";
+};
+
+$("clear-completed").addEventListener("click", () => {
+  $("todo-list").innerHTML = "";
+  updateCount();
+});
+
+const updateCount = () => {
+  const numberOfItems = $("todo-list").childElementCount / 2;
+  $("item-count").textContent = `${numberOfItems} ${
+    numberOfItems <= 1 ? "item" : "items"
+  }`;
+};

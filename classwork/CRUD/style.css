@@ -308,14 +308,17 @@ input {
   }
 }
 
-#delete-button {
+#delete-button,
+#save {
   background-color: red;
   color: white;
   border: none;
   padding: 5px 10px;
   border-radius: 8px;
 }
-
+#save {
+  background-color: #6967dd;
+}
 #delete-button:hover {
   background-color: rgb(154, 0, 0);
   color: white;
