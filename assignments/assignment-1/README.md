@@ -2,7 +2,7 @@
 
 This assignment demonstrates basic HTML navigation and image handling. It creates a simple multi-page website linking to profiles of famous tech figures.
 
-## 📚 What You Will Learn
+## What You Will Learn
 
 -   **Anchor Tags (`<a>`)**: Creating links between different HTML pages.
 -   **Image Tags (`<img>`)**: Embedding images and controlling their size.
@@ -11,7 +11,7 @@ This assignment demonstrates basic HTML navigation and image handling. It create
 
 ---
 
-## 🚀 Project Structure
+## Project Structure
 
 -   **home.html**: The main landing page containing links to all profiles.
 -   **std1.html**: Profile page for Elon Musk.

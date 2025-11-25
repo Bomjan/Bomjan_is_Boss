@@ -2,7 +2,7 @@
 
 This assignment involves creating a personal portfolio website using HTML and CSS. It focuses on layout, styling, and presenting personal information in a professional manner.
 
-## 📚 What You Will Learn
+## What You Will Learn
 
 -   **CSS Layouts**: Using Flexbox or Grid to create multi-column layouts (e.g., sidebar and main content).
 -   **Styling**: Applying fonts, colors, borders, and spacing to enhance visual appeal.
@@ -11,7 +11,7 @@ This assignment involves creating a personal portfolio website using HTML and CS
 
 ---
 
-## 🚀 Project Structure
+## Project Structure
 
 -   **index.html**: The main structure of the portfolio.
 -   **style.css**: All the styling rules for the portfolio.
@@ -19,7 +19,7 @@ This assignment involves creating a personal portfolio website using HTML and CS
 
 ---
 
-## 📝 Code Walkthrough
+## Code Walkthrough
 
 ### 1. Layout Structure
 

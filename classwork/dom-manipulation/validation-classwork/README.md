@@ -2,7 +2,7 @@
 
 This project demonstrates how to implement client-side form validation using JavaScript. It ensures that user input meets specific criteria before the form is submitted.
 
-## 📚 What You Will Learn
+## What You Will Learn
 
 -   **Preventing Default Behavior**: Using `e.preventDefault()` to stop the form from reloading the page.
 -   **Value Retrieval**: Getting values from input fields.
@@ -12,7 +12,7 @@ This project demonstrates how to implement client-side form validation using Jav
 
 ---
 
-## 🚀 Features
+## Features
 
 -   **Email Validation**: Checks if the entered email follows a valid format (e.g., `user@example.com`).
 -   **Password Matching**: Ensures that the "Password" and "Confirm Password" fields are identical.
@@ -20,7 +20,7 @@ This project demonstrates how to implement client-side form validation using Jav
 
 ---
 
-## 📝 Code Walkthrough
+## Code Walkthrough
 
 ### 1. Event Listener
 

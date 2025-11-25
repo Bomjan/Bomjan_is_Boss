@@ -44,21 +44,21 @@ It documents the learning journey of building web pages using **HTML**, **CSS**,
 This repository is organized into classwork and assignments:
 
 ### Classwork
--   **basic-elements**: Fundamental HTML elements.
+-   **basic-elements**: Fundamental HTML elements (headings, links, images, paragraphs).
 -   **bootstrap**: Introduction to the Bootstrap framework.
--   **colors**: Working with colors in CSS.
+-   **colors**: Working with colors in CSS (RGB, HEX, HSL, named colors).
 -   **crud-app**: A basic Create, Read, Update, Delete application.
--   **css-link**: Linking CSS to HTML.
+-   **css-link**: Linking CSS to HTML (external, internal, inline styles).
 -   **dom-manipulation**: Manipulating the DOM with JavaScript.
     -   **shopping-list**: A simple shopping list application.
     -   **login-signup**: Login and Signup forms with local storage.
     -   **validation-classwork**: Form validation examples.
--   **fonts-da-fonts**: Using custom fonts.
--   **grids**: CSS Grid layouts.
--   **jquery-basics**: Introduction to jQuery.
--   **loading**: Loading animations.
--   **selectors-in-css**: CSS selectors.
--   **transformations**: CSS transforms and animations.
+-   **fonts-and-typography**: Using custom fonts and typography best practices.
+-   **grids**: CSS Grid layouts and Bootstrap grid system.
+-   **jquery-basics**: Introduction to jQuery with interactive examples.
+-   **loading**: CSS loading animations with keyframes.
+-   **selectors-in-css**: CSS selectors (class, id, element, attribute, pseudo-classes).
+-   **transformations**: CSS transforms, transitions, and clip-path.
 
 ### Assignments
 -   **assignment-1**

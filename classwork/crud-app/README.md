@@ -2,7 +2,7 @@
 
 A simple **Create, Read, Update, Delete (CRUD)** application built with vanilla JavaScript. This project demonstrates how to manage state and manipulate the DOM to create a functional Todo List.
 
-## 📚 What You Will Learn
+## What You Will Learn
 
 -   **DOM Manipulation**: Creating, appending, and removing elements dynamically.
 -   **Event Handling**: Listening for form submissions, clicks, and double-clicks.
@@ -11,7 +11,7 @@ A simple **Create, Read, Update, Delete (CRUD)** application built with vanilla 
 
 ---
 
-## 🚀 Features
+## Features
 
 -   **Add Tasks**: Users can type a task and add it to the list.
 -   **Edit Tasks**: Users can edit existing tasks.
@@ -22,7 +22,7 @@ A simple **Create, Read, Update, Delete (CRUD)** application built with vanilla 
 
 ---
 
-## 📝 Code Walkthrough
+## Code Walkthrough
 
 ### 1. Helper Function `$`
 

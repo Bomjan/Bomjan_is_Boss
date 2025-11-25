@@ -2,7 +2,7 @@
 
 This folder contains examples of CSS Grid, a powerful layout system for creating two-dimensional layouts on the web. It includes both basic grid examples and named grid areas.
 
-## 📚 What You Will Learn
+## What You Will Learn
 
 -   **CSS Grid Basics**: Creating grid containers and defining rows and columns.
 -   **Grid Template Areas**: Using named areas to create intuitive layouts.
@@ -12,7 +12,7 @@ This folder contains examples of CSS Grid, a powerful layout system for creating
 
 ---
 
-## 🚀 Files in This Folder
+## Files in This Folder
 
 ### 1. `index.html`
 A Bootstrap-based navigation example showing how to use Bootstrap's grid system and components.
@@ -25,7 +25,7 @@ Demonstrates CSS Grid with named template areas for creating complex layouts eas
 
 ---
 
-## 📝 CSS Grid Fundamentals
+## CSS Grid Fundamentals
 
 ### Creating a Grid Container
 
@@ -59,7 +59,7 @@ Named areas make it easy to visualize and create layouts:
 
 ---
 
-## 💡 Key Grid Properties
+## Key Grid Properties
 
 | Property | Description |
 | :--- | :--- |
@@ -73,7 +73,7 @@ Named areas make it easy to visualize and create layouts:
 
 ---
 
-## 🎯 Common Grid Patterns
+## Common Grid Patterns
 
 ### Equal Columns
 ```css

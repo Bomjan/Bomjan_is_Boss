@@ -2,7 +2,7 @@
 
 A basic authentication interface simulation using **Local Storage**. This project demonstrates how to switch between views (Login vs. Signup) and persist user data in the browser.
 
-## 📚 What You Will Learn
+## What You Will Learn
 
 -   **Form Handling**: Capturing user input from login and registration forms.
 -   **Local Storage**: Saving and retrieving data using `localStorage`.
@@ -11,7 +11,7 @@ A basic authentication interface simulation using **Local Storage**. This projec
 
 ---
 
-## 🚀 Features
+## Features
 
 -   **Registration**: Users can sign up with a username (email/phone) and password.
 -   **Password Validation**: Checks if "Password" and "Confirm Password" match.
@@ -21,7 +21,7 @@ A basic authentication interface simulation using **Local Storage**. This projec
 
 ---
 
-## 📝 Code Walkthrough
+## Code Walkthrough
 
 ### 1. View Switching
 
@@ -62,6 +62,6 @@ if (data.username == username && data.password == password) {
 
 ---
 
-## ⚠️ Note
+## Note
 
 This is a **client-side only** demonstration. In a real application, authentication should **never** be handled purely on the client side or store passwords in Local Storage without encryption and backend verification.

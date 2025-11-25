@@ -2,7 +2,7 @@
 
 This project demonstrates advanced CSS techniques including transformations, transitions, and clip-path to create interactive card components with hover effects.
 
-## 📚 What You Will Learn
+## What You Will Learn
 
 -   **CSS Transforms**: Using `translateY()` and `scaleY()` to move and scale elements.
 -   **CSS Transitions**: Creating smooth animations when properties change (e.g., on hover).
@@ -12,7 +12,7 @@ This project demonstrates advanced CSS techniques including transformations, tra
 
 ---
 
-## 🚀 Features
+## Features
 
 -   **Card Lift Effect**: Cards rise up when hovered, creating a 3D floating effect.
 -   **Expanding Middle Section**: The middle section scales vertically on hover.
@@ -21,7 +21,7 @@ This project demonstrates advanced CSS techniques including transformations, tra
 
 ---
 
-## 📝 Code Walkthrough
+## Code Walkthrough
 
 ### 1. Basic Card Structure
 
@@ -95,7 +95,7 @@ The coordinates are percentages: `(x y)` where:
 
 ---
 
-## 💡 Key CSS Properties
+## Key CSS Properties
 
 | Property | Description |
 | :--- | :--- |

@@ -2,7 +2,7 @@
 
 This project demonstrates how to create a custom loading animation using CSS Keyframes. It uses a series of `<span>` elements that grow and shrink in height to create a wave effect.
 
-## 📚 What You Will Learn
+## What You Will Learn
 
 -   **CSS Animations**: Using `@keyframes` to define animation sequences.
 -   **Animation Properties**: Controlling duration, timing functions (`ease-in-out`), and iteration (`infinite`).
@@ -11,7 +11,7 @@ This project demonstrates how to create a custom loading animation using CSS Key
 
 ---
 
-## 📝 Code Walkthrough
+## Code Walkthrough
 
 ### 1. The HTML Structure
 

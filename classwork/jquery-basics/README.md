@@ -2,7 +2,7 @@
 
 Welcome to the **jQuery Basics** learning module! This project demonstrates how to use jQuery to build an interactive "Number Sorter" application.
 
-## 📚 What You Will Learn
+## What You Will Learn
 
 In this module, we explore core jQuery concepts including:
 -   **Selectors**: How to find and target HTML elements.
@@ -13,7 +13,7 @@ In this module, we explore core jQuery concepts including:
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 The application allows a user to enter a number. When the "Find" button is clicked, the app:
 1.  Validates the input.
@@ -22,7 +22,7 @@ The application allows a user to enter a number. When the "Find" button is click
 
 ---
 
-## 📝 Code Walkthrough
+## Code Walkthrough
 
 ### 1. Setup and Initialization
 
@@ -132,7 +132,7 @@ setTimeout(() => {
 
 ---
 
-## 🔑 Key jQuery Methods Used
+## Key jQuery Methods Used
 
 | Method | Description |
 | :--- | :--- |
@@ -146,7 +146,7 @@ setTimeout(() => {
 
 ---
 
-## 💡 Practice Challenge
+## Practice Challenge
 
 Try modifying the code to:
 1.  **Reverse the order**: Display numbers from the input down to 0.

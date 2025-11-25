@@ -2,7 +2,7 @@
 
 A simple shopping list app that allows users to add and remove items. This project demonstrates array manipulation and dynamic DOM rendering.
 
-## 📚 What You Will Learn
+## What You Will Learn
 
 -   **Array Manipulation**: Using `push()` to add items and `splice()` to remove them.
 -   **Event Delegation**: Attaching a single event listener to a parent element (`itemList`) to handle clicks on dynamically created children (delete buttons).
@@ -11,7 +11,7 @@ A simple shopping list app that allows users to add and remove items. This proje
 
 ---
 
-## 🚀 Features
+## Features
 
 -   **Add Items**: Type an item and click "Add" or press Enter.
 -   **Remove Items**: Click the "Delete" button next to an item to remove it.
@@ -19,7 +19,7 @@ A simple shopping list app that allows users to add and remove items. This proje
 
 ---
 
-## 📝 Code Walkthrough
+## Code Walkthrough
 
 ### 1. State Management
 
