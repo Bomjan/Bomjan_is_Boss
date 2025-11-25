@@ -2,7 +2,7 @@
 
 A 14-week structured curriculum for Frontend Web Development covering HTML, CSS, and DOM manipulation.
 
-**Note**: JavaScript fundamentals (variables, functions, loops, arrays, objects) are covered in the **Fundamentals of Programming** module.
+**Note**: JavaScript fundamentals (variables, functions, loops, arrays, objects) are covered in the [**Fundamentals of Programming**](https://github.com/Bomjan/FoP) module.
 
 ---
 
@@ -142,7 +142,7 @@ A 14-week structured curriculum for Frontend Web Development covering HTML, CSS,
 
 ## Phase 5: DOM Manipulation (Weeks 10-12)
 
-**Prerequisites**: JavaScript fundamentals from "Fundamentals of Programming" module
+**Prerequisites**: JavaScript fundamentals from [**Fundamentals of Programming**](https://github.com/Bomjan/FoP) module
 
 ### 25. Selecting Elements
 **Location**: `classwork/04-dom-manipulation/selecting-elements/`  
@@ -235,7 +235,7 @@ Located in `projects/` (self-directed):
 
 ## Self-Explored Topics
 
-The following topics were explored independently (covered in "Fundamentals of Programming"):
+The following topics were explored independently (covered in [**Fundamentals of Programming**](https://github.com/Bomjan/FoP)):
 
 - **Async JavaScript** - Promises, async/await, setTimeout
 - **Fetch API** - Making HTTP requests to APIs
@@ -283,28 +283,6 @@ The following topics were explored independently (covered in "Fundamentals of Pr
 
 ---
 
-## Resources
-
--   [MDN Web Docs](https://developer.mozilla.org/) - Comprehensive documentation
--   [W3Schools](https://www.w3schools.com/) - Tutorials and references
--   [CSS-Tricks](https://css-tricks.com/) - CSS techniques
--   [JavaScript.info](https://javascript.info/) - Modern JavaScript tutorial
--   [freeCodeCamp](https://www.freecodecamp.org/) - Interactive learning
-
----
-
-## Next Steps After Completion
-
-1.  Frontend Frameworks (React, Vue, Angular)
-2.  Backend Development (Node.js, Express)
-3.  Databases (MongoDB, SQL)
-4.  Advanced CSS (Sass, Tailwind)
-5.  Build Tools (Webpack, Vite)
-6.  Testing (Jest, Cypress)
-7.  TypeScript
-
----
-
 **Duration**: 14 weeks  
 **Focus**: HTML, CSS, and DOM Manipulation  
-**Prerequisites**: Fundamentals of Programming module
+**Prerequisites**: [Fundamentals of Programming](https://github.com/Bomjan/FoP) module
