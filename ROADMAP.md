@@ -1,32 +1,30 @@
-# Frontend Web Development 1 - Complete Learning Roadmap
+# Frontend Web Development 1 - Learning Roadmap
 
-This roadmap provides a structured path through all Frontend Web Development topics, organized from beginner to advanced.
+A 14-week structured curriculum for Frontend Web Development covering HTML, CSS, and DOM manipulation.
+
+**Note**: JavaScript fundamentals (variables, functions, loops, arrays, objects) are covered in the **Fundamentals of Programming** module.
 
 ---
 
 ## How to Use This Roadmap
 
-1.  **Follow the numbered order** - Topics build on each other
-2.  **Complete all exercises** - Practice is essential
-3.  **Don't skip topics** - Even if you think you know it
-4.  **Build projects** - Apply what you learn
-5.  **Review regularly** - Reinforce your knowledge
+1.  Follow the numbered phases - Topics build on each other
+2.  Complete all exercises - Practice is essential
+3.  Build the projects - Apply what you learn
+4.  Review regularly - Reinforce your knowledge
 
 ---
 
 ## Progress Tracker
 
-Track your progress through the curriculum:
-
-- [ ] Phase 1: HTML Fundamentals (4 topics)
+- [ ] Phase 1: HTML Fundamentals (6 topics)
 - [ ] Phase 2: CSS Fundamentals (7 topics)
 - [ ] Phase 3: CSS Layouts (5 topics)
 - [ ] Phase 4: CSS Advanced (6 topics)
-- [ ] Phase 5: JavaScript Basics (8 topics)
-- [ ] Phase 6: DOM Manipulation (7 topics)
-- [ ] Phase 7: Advanced JavaScript (5 topics)
-- [ ] Phase 8: Projects (4 projects)
-- [ ] Phase 9: Best Practices (4 topics)
+- [ ] Phase 5: DOM Manipulation (7 topics)
+- [ ] Phase 6: Advanced JavaScript (2 topics)
+- [ ] Phase 7: Projects (2 classwork projects)
+- [ ] Phase 8: Best Practices (4 topics)
 
 ---
 
@@ -34,39 +32,27 @@ Track your progress through the curriculum:
 
 ### 01. Basic Elements
 **Location**: `classwork/01-html-fundamentals/basic-elements/`  
-**Topics**: Headings, paragraphs, links, images, horizontal rules  
-**Time**: 2-3 hours  
-**Prerequisites**: None
+**Topics**: Headings, paragraphs, links, images, horizontal rules
 
 ### 02. Lists and Text Formatting
 **Location**: `classwork/01-html-fundamentals/lists-and-text-formatting/`  
-**Topics**: Ordered/unordered/description lists, text formatting tags  
-**Time**: 2-3 hours  
-**Prerequisites**: Basic Elements
+**Topics**: Ordered/unordered/description lists, text formatting tags
 
 ### 03. Tables
 **Location**: `classwork/01-html-fundamentals/tables/`  
-**Topics**: Table structure, headers, rows, cells, styling  
-**Time**: 2 hours  
-**Prerequisites**: Basic Elements
+**Topics**: Table structure, headers, rows, cells, styling
 
 ### 04. Forms
 **Location**: `classwork/01-html-fundamentals/forms/`  
-**Topics**: Input types, labels, validation, form submission  
-**Time**: 3-4 hours  
-**Prerequisites**: Basic Elements
+**Topics**: Input types, labels, validation, form submission
 
 ### 05. Semantic HTML
 **Location**: `classwork/01-html-fundamentals/semantic-html/`  
-**Topics**: `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>`  
-**Time**: 2 hours  
-**Prerequisites**: Basic Elements
+**Topics**: `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>`
 
 ### 06. Media Elements
 **Location**: `classwork/01-html-fundamentals/media-elements/`  
-**Topics**: `<audio>`, `<video>`, `<iframe>`, embedding content  
-**Time**: 2 hours  
-**Prerequisites**: Basic Elements
+**Topics**: `<audio>`, `<video>`, `<iframe>`, embedding content
 
 ---
 
@@ -74,307 +60,186 @@ Track your progress through the curriculum:
 
 ### 07. Linking CSS
 **Location**: `classwork/02-css-fundamentals/css-link/`  
-**Topics**: External, internal, inline styles  
-**Time**: 1 hour  
-**Prerequisites**: HTML Fundamentals
+**Topics**: External, internal, inline styles
 
 ### 08. Colors
 **Location**: `classwork/02-css-fundamentals/colors/`  
-**Topics**: RGB, HEX, HSL, named colors, opacity  
-**Time**: 2 hours  
-**Prerequisites**: Linking CSS
+**Topics**: RGB, HEX, HSL, named colors, opacity
 
 ### 09. Selectors
 **Location**: `classwork/02-css-fundamentals/selectors-in-css/`  
-**Topics**: Element, class, ID, attribute, pseudo-classes  
-**Time**: 3 hours  
-**Prerequisites**: Linking CSS
+**Topics**: Element, class, ID, attribute, pseudo-classes
 
 ### 10. Box Model
 **Location**: `classwork/02-css-fundamentals/box-model/`  
-**Topics**: Content, padding, border, margin, box-sizing  
-**Time**: 2-3 hours  
-**Prerequisites**: Selectors
+**Topics**: Content, padding, border, margin, box-sizing
 
 ### 11. Units and Values
 **Location**: `classwork/02-css-fundamentals/units-and-values/`  
-**Topics**: px, em, rem, %, vh, vw, calc()  
-**Time**: 2 hours  
-**Prerequisites**: Box Model
+**Topics**: px, em, rem, %, vh, vw, calc()
 
 ### 12. Display Property
 **Location**: `classwork/02-css-fundamentals/display-property/`  
-**Topics**: Block, inline, inline-block, none  
-**Time**: 2 hours  
-**Prerequisites**: Box Model
+**Topics**: Block, inline, inline-block, none
 
 ### 13. Typography
 **Location**: `classwork/02-css-fundamentals/fonts-and-typography/`  
-**Topics**: Font properties, Google Fonts, custom fonts  
-**Time**: 2-3 hours  
-**Prerequisites**: Selectors
+**Topics**: Font properties, Google Fonts, custom fonts
 
 ---
 
-## Phase 3: CSS Layouts (Weeks 5-6)
+## Phase 3: CSS Layouts (Weeks 5-7)
 
 ### 14. Positioning
 **Location**: `classwork/03-css-layouts/positioning/`  
-**Topics**: Static, relative, absolute, fixed, sticky  
-**Time**: 3 hours  
-**Prerequisites**: Box Model
+**Topics**: Static, relative, absolute, fixed, sticky
 
 ### 15. Flexbox
 **Location**: `classwork/03-css-layouts/flexbox/`  
-**Topics**: Flex container, flex items, alignment, ordering  
-**Time**: 4 hours  
-**Prerequisites**: Display Property
+**Topics**: Flex container, flex items, alignment, ordering
 
 ### 16. CSS Grid
 **Location**: `classwork/03-css-layouts/grids/`  
-**Topics**: Grid container, template areas, responsive grids  
-**Time**: 4 hours  
-**Prerequisites**: Flexbox
+**Topics**: Grid container, template areas, responsive grids
 
 ### 17. Float and Clear
 **Location**: `classwork/03-css-layouts/float-and-clear/`  
-**Topics**: Float property, clearing floats, legacy layouts  
-**Time**: 1-2 hours  
-**Prerequisites**: Box Model
+**Topics**: Float property, clearing floats, legacy layouts
 
 ### 18. Responsive Design
 **Location**: `classwork/03-css-layouts/responsive-design/`  
-**Topics**: Media queries, mobile-first, breakpoints  
-**Time**: 3-4 hours  
-**Prerequisites**: Flexbox, Grid
+**Topics**: Media queries, mobile-first, breakpoints
 
 ---
 
-## Phase 4: CSS Advanced (Weeks 7-8)
+## Phase 4: CSS Advanced (Weeks 8-9)
 
 ### 19. Pseudo-classes and Pseudo-elements
 **Location**: `classwork/04-css-advanced/pseudo-classes-elements/`  
-**Topics**: `:hover`, `:nth-child()`, `::before`, `::after`  
-**Time**: 2-3 hours  
-**Prerequisites**: Selectors
+**Topics**: `:hover`, `:nth-child()`, `::before`, `::after`
 
 ### 20. Transitions
 **Location**: `classwork/04-css-advanced/transitions/`  
-**Topics**: Transition properties, timing functions, delays  
-**Time**: 2 hours  
-**Prerequisites**: Pseudo-classes
+**Topics**: Transition properties, timing functions, delays
 
 ### 21. Transformations
 **Location**: `classwork/04-css-advanced/transformations/`  
-**Topics**: Translate, rotate, scale, skew, 3D transforms  
-**Time**: 2-3 hours  
-**Prerequisites**: Transitions
+**Topics**: Translate, rotate, scale, skew, 3D transforms
 
 ### 22. Animations
 **Location**: `classwork/04-css-advanced/animations/`  
-**Topics**: Keyframes, animation properties, timing  
-**Time**: 3 hours  
-**Prerequisites**: Transitions
+**Topics**: Keyframes, animation properties, timing
 
 ### 23. CSS Variables
 **Location**: `classwork/04-css-advanced/css-variables/`  
-**Topics**: Custom properties, theming, dynamic values  
-**Time**: 2 hours  
-**Prerequisites**: Selectors
+**Topics**: Custom properties, theming, dynamic values
 
 ### 24. Bootstrap
 **Location**: `classwork/04-css-advanced/bootstrap/`  
-**Topics**: Grid system, components, utilities  
-**Time**: 3-4 hours  
-**Prerequisites**: Responsive Design
+**Topics**: Grid system, components, utilities
 
 ---
 
-## Phase 5: JavaScript Basics (Weeks 9-10)
+## Phase 5: DOM Manipulation (Weeks 10-12)
 
-### 25. Variables and Data Types
-**Location**: `classwork/05-javascript-basics/variables-and-data-types/`  
-**Topics**: var, let, const, strings, numbers, booleans  
-**Time**: 2 hours  
-**Prerequisites**: HTML/CSS basics
+**Prerequisites**: JavaScript fundamentals from "Fundamentals of Programming" module
 
-### 26. Operators
-**Location**: `classwork/05-javascript-basics/operators/`  
-**Topics**: Arithmetic, comparison, logical, assignment  
-**Time**: 2 hours  
-**Prerequisites**: Variables
+### 25. Selecting Elements
+**Location**: `classwork/04-dom-manipulation/selecting-elements/`  
+**Topics**: getElementById, querySelector, querySelectorAll
 
-### 27. Control Flow
-**Location**: `classwork/05-javascript-basics/control-flow/`  
-**Topics**: if/else, switch, ternary operator  
-**Time**: 2 hours  
-**Prerequisites**: Operators
+### 26. Modifying Elements
+**Location**: `classwork/04-dom-manipulation/modifying-elements/`  
+**Topics**: innerHTML, textContent, classList, attributes
 
-### 28. Loops
-**Location**: `classwork/05-javascript-basics/loops/`  
-**Topics**: for, while, do-while, forEach  
-**Time**: 2-3 hours  
-**Prerequisites**: Control Flow
+### 27. Events
+**Location**: `classwork/04-dom-manipulation/events/`  
+**Topics**: Event listeners, event object, bubbling/capturing
 
-### 29. Functions
-**Location**: `classwork/05-javascript-basics/functions/`  
-**Topics**: Declaration, expression, arrow functions, parameters  
-**Time**: 3 hours  
-**Prerequisites**: Control Flow
+### 28. Shopping List App
+**Location**: `classwork/04-dom-manipulation/shopping-list/`  
+**Topics**: Array manipulation, event delegation
 
-### 30. Arrays
-**Location**: `classwork/05-javascript-basics/arrays/`  
-**Topics**: Creating, accessing, methods (map, filter, reduce)  
-**Time**: 3-4 hours  
-**Prerequisites**: Loops, Functions
+### 29. Login/Signup System
+**Location**: `classwork/04-dom-manipulation/login-signup/`  
+**Topics**: Local storage, form handling
 
-### 31. Objects
-**Location**: `classwork/05-javascript-basics/objects/`  
-**Topics**: Creating, accessing, methods, this keyword  
-**Time**: 3 hours  
-**Prerequisites**: Functions
+### 30. Form Validation
+**Location**: `classwork/04-dom-manipulation/validation-classwork/`  
+**Topics**: Client-side validation, error messages
 
-### 32. ES6+ Features
-**Location**: `classwork/05-javascript-basics/es6-features/`  
-**Topics**: Destructuring, spread, template literals, modules  
-**Time**: 2-3 hours  
-**Prerequisites**: Arrays, Objects
+### 31. Regex Validation
+**Location**: `classwork/04-dom-manipulation/regex-validation/`  
+**Topics**: Regular expressions, pattern matching
 
 ---
 
-## Phase 6: DOM Manipulation (Weeks 11-12)
+## Phase 6: Advanced JavaScript (Week 13)
 
-### 33. Selecting Elements
-**Location**: `classwork/06-dom-manipulation/selecting-elements/`  
-**Topics**: getElementById, querySelector, querySelectorAll  
-**Time**: 2 hours  
-**Prerequisites**: JavaScript Basics
+### 32. Web Storage
+**Location**: `classwork/05-advanced-javascript/web-storage/`  
+**Topics**: localStorage, sessionStorage, cookies
 
-### 34. Modifying Elements
-**Location**: `classwork/06-dom-manipulation/modifying-elements/`  
-**Topics**: innerHTML, textContent, classList, attributes  
-**Time**: 2 hours  
-**Prerequisites**: Selecting Elements
-
-### 35. Events
-**Location**: `classwork/06-dom-manipulation/events/`  
-**Topics**: Event listeners, event object, bubbling/capturing  
-**Time**: 3 hours  
-**Prerequisites**: Modifying Elements
-
-### 36. Shopping List App
-**Location**: `classwork/06-dom-manipulation/shopping-list/`  
-**Topics**: Array manipulation, event delegation  
-**Time**: 2-3 hours  
-**Prerequisites**: Events, Arrays
-
-### 37. Login/Signup System
-**Location**: `classwork/06-dom-manipulation/login-signup/`  
-**Topics**: Local storage, form handling  
-**Time**: 2-3 hours  
-**Prerequisites**: Events, Objects
-
-### 38. Form Validation
-**Location**: `classwork/06-dom-manipulation/validation-classwork/`  
-**Topics**: Client-side validation, error messages  
-**Time**: 2 hours  
-**Prerequisites**: Forms, Events
-
-### 39. Regex Validation
-**Location**: `classwork/06-dom-manipulation/regex-validation/`  
-**Topics**: Regular expressions, pattern matching  
-**Time**: 3 hours  
-**Prerequisites**: Form Validation
+### 33. jQuery Basics
+**Location**: `classwork/05-advanced-javascript/jquery-basics/`  
+**Topics**: Selectors, DOM manipulation, events, AJAX
 
 ---
 
-## Phase 7: Advanced JavaScript (Weeks 13-14)
+## Phase 7: Classwork Projects (Week 14)
 
-### 40. Async JavaScript
-**Location**: `classwork/07-advanced-javascript/async-javascript/`  
-**Topics**: setTimeout, setInterval, callbacks, promises  
-**Time**: 3-4 hours  
-**Prerequisites**: Functions
+### 34. CRUD Application
+**Location**: `classwork/06-projects/crud-app/`  
+**Topics**: Create, Read, Update, Delete operations
 
-### 41. Web Storage
-**Location**: `classwork/07-advanced-javascript/web-storage/`  
-**Topics**: localStorage, sessionStorage, cookies  
-**Time**: 2 hours  
-**Prerequisites**: Objects
-
-### 42. Fetch API
-**Location**: `classwork/07-advanced-javascript/fetch-api/`  
-**Topics**: HTTP requests, REST APIs, async/await  
-**Time**: 3-4 hours  
-**Prerequisites**: Async JavaScript
-
-### 43. JSON
-**Location**: `classwork/07-advanced-javascript/json/`  
-**Topics**: Parsing, stringifying, working with APIs  
-**Time**: 2 hours  
-**Prerequisites**: Objects
-
-### 44. jQuery Basics
-**Location**: `classwork/07-advanced-javascript/jquery-basics/`  
-**Topics**: Selectors, DOM manipulation, events, AJAX  
-**Time**: 3 hours  
-**Prerequisites**: DOM Manipulation
+### 35. Calculator
+**Location**: `classwork/06-projects/calculator/`  
+**Topics**: DOM manipulation, event handling, arithmetic operations
 
 ---
 
-## Phase 8: Projects (Weeks 15-16)
+## Phase 8: Best Practices (Throughout Course)
 
-### 45. CRUD Application
-**Location**: `classwork/08-projects/crud-app/`  
-**Topics**: Create, Read, Update, Delete operations  
-**Time**: 4-5 hours  
-**Prerequisites**: DOM Manipulation, Arrays
+### 36. Accessibility
+**Location**: `classwork/07-best-practices/accessibility/`  
+**Topics**: ARIA, semantic HTML, keyboard navigation
 
-### 46. Advanced Todo App
-**Location**: `classwork/08-projects/todo-app-advanced/`  
-**Topics**: Filters, local storage, drag & drop  
-**Time**: 5-6 hours  
-**Prerequisites**: CRUD App, Web Storage
+### 37. Performance
+**Location**: `classwork/07-best-practices/performance/`  
+**Topics**: Optimization, lazy loading, minification
 
-### 47. Weather App
-**Location**: `classwork/08-projects/weather-app/`  
-**Topics**: API integration, async data, UI updates  
-**Time**: 5-6 hours  
-**Prerequisites**: Fetch API, JSON
+### 38. Debugging
+**Location**: `classwork/07-best-practices/debugging/`  
+**Topics**: Browser DevTools, console methods, breakpoints
 
-### 48. Portfolio Website
-**Location**: `classwork/08-projects/portfolio-website/`  
-**Topics**: Responsive design, animations, best practices  
-**Time**: 8-10 hours  
-**Prerequisites**: All previous topics
+### 39. Git Basics
+**Location**: `classwork/07-best-practices/git-basics/`  
+**Topics**: Version control, commits, branches, GitHub
 
 ---
 
-## Phase 9: Best Practices (Week 17)
+## Personal Projects
 
-### 49. Accessibility
-**Location**: `classwork/09-best-practices/accessibility/`  
-**Topics**: ARIA, semantic HTML, keyboard navigation  
-**Time**: 2-3 hours  
-**Prerequisites**: HTML, Forms
+Located in `projects/` (self-directed):
 
-### 50. Performance
-**Location**: `classwork/09-best-practices/performance/`  
-**Topics**: Optimization, lazy loading, minification  
-**Time**: 2 hours  
-**Prerequisites**: All previous topics
+### Advanced Todo App
+**Topics**: Filters, local storage, drag & drop
 
-### 51. Debugging
-**Location**: `classwork/09-best-practices/debugging/`  
-**Topics**: Browser DevTools, console methods, breakpoints  
-**Time**: 2 hours  
-**Prerequisites**: JavaScript
+### Weather App
+**Topics**: API integration, async data (uses Fetch API - self-explored)
 
-### 52. Git Basics
-**Location**: `classwork/09-best-practices/git-basics/`  
-**Topics**: Version control, commits, branches, GitHub  
-**Time**: 2-3 hours  
-**Prerequisites**: None (can be done anytime)
+### Portfolio Website
+**Topics**: Responsive design, animations, best practices
+
+---
+
+## Self-Explored Topics
+
+The following topics were explored independently (covered in "Fundamentals of Programming"):
+
+- **Async JavaScript** - Promises, async/await, setTimeout
+- **Fetch API** - Making HTTP requests to APIs
+- **JSON** - Working with JSON data
 
 ---
 
@@ -382,30 +247,27 @@ Track your progress through the curriculum:
 
 ### Assignment 1: HTML Navigation
 **Location**: `assignments/assignment-1/`  
-**Topics**: HTML basics, navigation, images  
 **Recommended After**: Phase 1
 
 ### Assignment 2: Portfolio Project
 **Location**: `assignments/assignment-2/`  
-**Topics**: CSS layouts, typography  
 **Recommended After**: Phase 3
 
 ### Lab Exercise 1
 **Location**: `assignments/lab-exercise-1/`  
-**Topics**: Various exercises  
-**Recommended After**: As assigned
+**As assigned**
 
 ---
 
-## Total Time Estimate
+## Group Work
 
--   **HTML**: 15-18 hours
--   **CSS**: 35-40 hours
--   **JavaScript**: 40-45 hours
--   **Projects**: 25-30 hours
--   **Best Practices**: 8-10 hours
+### Group Work 1
+**Repository**: [https://github.com/Bomjan/groupwork1_s1](https://github.com/Bomjan/groupwork1_s1)  
+**Focus**: HTML and CSS fundamentals
 
-**Total**: 123-143 hours (approximately 17 weeks at 8 hours/week)
+### Group Work 2
+**Repository**: [https://github.com/Bomjan/groupwork2_s1](https://github.com/Bomjan/groupwork2_s1)  
+**Focus**: JavaScript DOM manipulation and responsive design
 
 ---
 
@@ -418,7 +280,6 @@ Track your progress through the curriculum:
 5.  **Review regularly** - Spaced repetition helps retention
 6.  **Take breaks** - Avoid burnout
 7.  **Join communities** - Learn from others
-8.  **Keep a learning journal** - Document your progress
 
 ---
 
@@ -429,20 +290,21 @@ Track your progress through the curriculum:
 -   [CSS-Tricks](https://css-tricks.com/) - CSS techniques
 -   [JavaScript.info](https://javascript.info/) - Modern JavaScript tutorial
 -   [freeCodeCamp](https://www.freecodecamp.org/) - Interactive learning
--   [Frontend Mentor](https://www.frontendmentor.io/) - Practice projects
 
 ---
 
 ## Next Steps After Completion
 
-1.  **Frontend Frameworks**: React, Vue, or Angular
-2.  **Backend Development**: Node.js, Express
-3.  **Databases**: MongoDB, SQL
-4.  **Advanced CSS**: Sass, Tailwind CSS
-5.  **Build Tools**: Webpack, Vite
-6.  **Testing**: Jest, Cypress
-7.  **TypeScript**: Typed JavaScript
+1.  Frontend Frameworks (React, Vue, Angular)
+2.  Backend Development (Node.js, Express)
+3.  Databases (MongoDB, SQL)
+4.  Advanced CSS (Sass, Tailwind)
+5.  Build Tools (Webpack, Vite)
+6.  Testing (Jest, Cypress)
+7.  TypeScript
 
 ---
 
-**Good luck on your frontend development journey!**
+**Duration**: 14 weeks  
+**Focus**: HTML, CSS, and DOM Manipulation  
+**Prerequisites**: Fundamentals of Programming module

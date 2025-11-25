@@ -1,6 +1,6 @@
-# Fetch API
+# Simple Calculator
 
-This topic is part of the Frontend Web Development 1 curriculum.
+A basic calculator application demonstrating DOM manipulation, event handling, and JavaScript fundamentals.
 
 ## Status
 
@@ -10,11 +10,11 @@ This README is a placeholder. Comprehensive documentation will be added soon.
 
 ## What You Will Learn
 
-Topics covered in this module will include:
-- Core concepts and fundamentals
-- Practical examples and code snippets
-- Best practices and common patterns
-- Hands-on exercises and challenges
+- DOM element selection and manipulation
+- Event listeners for button clicks
+- Basic arithmetic operations
+- Displaying results dynamically
+- Input validation
 
 ## Quick Start
 
