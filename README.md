@@ -38,3 +38,31 @@ It documents the learning journey of building web pages using **HTML**, **CSS**,
 - Creating dynamic and interactive UI elements
 
 ---
+
+## Project Structure
+
+This repository is organized into classwork and assignments:
+
+### Classwork
+-   **basic-elements**: Fundamental HTML elements.
+-   **bootstrap**: Introduction to the Bootstrap framework.
+-   **colors**: Working with colors in CSS.
+-   **crud-app**: A basic Create, Read, Update, Delete application.
+-   **css-link**: Linking CSS to HTML.
+-   **dom-manipulation**: Manipulating the DOM with JavaScript.
+    -   **shopping-list**: A simple shopping list application.
+    -   **login-signup**: Login and Signup forms with local storage.
+    -   **validation-classwork**: Form validation examples.
+-   **fonts-da-fonts**: Using custom fonts.
+-   **grids**: CSS Grid layouts.
+-   **jquery-basics**: Introduction to jQuery.
+-   **loading**: Loading animations.
+-   **selectors-in-css**: CSS selectors.
+-   **transformations**: CSS transforms and animations.
+
+### Assignments
+-   **assignment-1**
+-   **assignment-2**
+-   **lab-exercise-1**
+
+---
