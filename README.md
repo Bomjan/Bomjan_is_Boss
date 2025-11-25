@@ -63,8 +63,9 @@ This repository documents my 14-week journey learning Frontend Web Development, 
 - CSS Variables
 - Bootstrap
 
-### Phase 5: DOM Manipulation
-**Location**: `classwork/04-dom-manipulation/`
+### Phase 4: DOM Manipulation
+**Location**: `classwork/04-dom-manipulation/`  
+**Prerequisites**: JavaScript fundamentals from "Fundamentals of Programming" module
 - Selecting Elements
 - Modifying Elements
 - Events
@@ -73,17 +74,17 @@ This repository documents my 14-week journey learning Frontend Web Development, 
 - Form Validation
 - Regex Validation
 
-### Phase 6: Advanced JavaScript
+### Phase 5: Advanced JavaScript
 **Location**: `classwork/05-advanced-javascript/`
 - Web Storage (localStorage/sessionStorage)
 - jQuery Basics
 
-### Phase 7: Classwork Projects
+### Phase 6: Classwork Projects
 **Location**: `classwork/06-projects/`
 - CRUD Application
 - Calculator
 
-### Phase 8: Best Practices
+### Phase 7: Best Practices
 **Location**: `classwork/07-best-practices/`
 - Accessibility
 - Performance
@@ -166,6 +167,8 @@ Collaborative projects completed during the semester:
 - **Projects**: 5 (2 classwork + 3 personal)
 - **Group Work**: 2 collaborative projects
 - **Documentation**: 100% coverage
+
+**Note**: JavaScript basics (variables, functions, loops, arrays, objects) are covered in the **Fundamentals of Programming** module.
 
 ---
 
