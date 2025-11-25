@@ -92,16 +92,5 @@ Collaborative projects completed during the semester:
 
 ---
 
-## Repository Statistics
-
-- **Duration**: 14 weeks
-- **Phases**: 7 (HTML, CSS Fundamentals, CSS Layouts, CSS Advanced, DOM, Advanced JS, Projects, Best Practices)
-- **Projects**: 5 (2 classwork + 3 personal)
-- **Group Work**: 2 collaborative projects
-- **Documentation**: 100% coverage
-
-**Note**: JavaScript basics (variables, functions, loops, arrays, objects) are covered in the [**Fundamentals of Programming**](https://github.com/Bomjan/FoP) module.
-
----
-
 **Start your journey**: Open [ROADMAP.md](ROADMAP.md) to begin!
+
