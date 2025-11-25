@@ -1,0 +1,52 @@
+html,
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 500px;
+}
+
+.field {
+  margin: 10px auto;
+}
+
+input {
+  padding: 8px 12px;
+  width: 100%;
+  border-radius: 5px;
+  border: 0.5px solid rgb(19, 88, 103);
+}
+
+button {
+  padding: 8px 10px;
+  margin: 0 auto;
+}
+
+input:valid {
+  border: 2px solid green;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+.error {
+  color: rgb(134, 7, 7);
+}
+
+.error {
+  display: none;
+  color: red;
+  font-size: 14px;
+}
+
+input:invalid + .error {
+  display: block;
+}
