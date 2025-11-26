@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoSQL Schema Documentation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-color: #fdfbf7;
+        --text-primary: #334155;
+        --text-secondary: #64748b;
+        --border-color: #f1f5f9;
+        
+        /* Collection Colors - Softer Pastels */
+        --users-bg: #fff7ed; --users-border: #fed7aa; --users-text: #c2410c;
+        --meds-bg: #ecfdf5; --meds-border: #a7f3d0; --meds-text: #047857;
+        --recs-bg: #f0f9ff; --recs-border: #bae6fd; --recs-text: #0369a1;
+        --apps-bg: #eef2ff; --apps-border: #c7d2fe; --apps-text: #4338ca;
+      }
+      
+      body {
+        background-color: var(--bg-color);
+        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 24px 24px;
+        font-family: "Outfit", sans-serif;
+        color: var(--text-primary);
+        line-height: 1.6;
+      }
+
+      .header {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid white;
+        padding: 60px 0;
+        margin-bottom: 60px;
+        text-align: center;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+      }
+
+      .header h1 {
+        font-weight: 800;
+        color: var(--text-primary);
+        letter-spacing: -0.025em;
+        margin-bottom: 10px;
+        font-size: 2.5rem;
+      }
+      
+      .header p {
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+
+      .schema-card {
+        background: white;
+        border: 6px solid white;
+        border-radius: 32px;
+        height: 100%;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        outline: 2px solid transparent;
+      }
+
+      .schema-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+      }
+
+      .card-header {
+        padding: 24px 32px;
+        font-weight: 800;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid rgba(255,255,255,0.5);
+      }
+      
+      /* Collection Specific Headers */
+      .card-users .card-header { background-color: var(--users-bg); color: var(--users-text); }
+      .card-users { outline-color: var(--users-border); }
+      
+      .card-meds .card-header { background-color: var(--meds-bg); color: var(--meds-text); }
+      .card-meds { outline-color: var(--meds-border); }
+      
+      .card-recs .card-header { background-color: var(--recs-bg); color: var(--recs-text); }
+      .card-recs { outline-color: var(--recs-border); }
+      
+      .card-apps .card-header { background-color: var(--apps-bg); color: var(--apps-text); }
+      .card-apps { outline-color: var(--apps-border); }
+
+      .collection-badge {
+        background: rgba(255,255,255,0.8);
+        font-size: 0.7rem;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-family: "JetBrains Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+
+      .card-body {
+        padding: 16px 0;
+      }
+
+      .field-row {
+        display: flex;
+        padding: 16px 32px;
+        border-bottom: 1px solid var(--border-color);
+        align-items: baseline;
+        transition: background-color 0.2s;
+      }
+      
+      .field-row:hover {
+        background-color: #f8fafc;
+      }
+
+      .field-row:last-child {
+        border-bottom: none;
+      }
+
+      .field-name {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        color: var(--text-primary);
+        min-width: 140px;
+        font-size: 0.95rem;
+      }
+
+      .field-type {
+        font-size: 0.7rem;
+        padding: 4px 12px;
+        border-radius: 12px;
+        margin-right: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      
+      /* Type specific colors */
+      .type-objectid { background: #f1f5f9; color: #64748b; }
+      .type-string { background: #fff1f2; color: #f43f5e; }
+      .type-date { background: #eff6ff; color: #3b82f6; }
+      .type-enum { background: #fff7ed; color: #f97316; }
+      .type-object { background: #f0fdf4; color: #22c55e; }
+      .type-array { background: #faf5ff; color: #a855f7; }
+      .type-time { background: #fdf4ff; color: #d946ef; }
+      .type-char { background: #fefce8; color: #eab308; }
+
+      .field-desc {
+        color: #94a3b8;
+        font-size: 0.85rem;
+        flex: 1;
+        font-weight: 500;
+      }
+
+      .optional {
+        color: #d97706;
+        font-size: 0.65rem;
+        font-weight: 800;
+        margin-left: auto;
+        background: #fffbeb;
+        padding: 4px 8px;
+        border-radius: 6px;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <h1>Schema Documentation</h1>
+        <p>Reference guide for MongoDB Collections</p>
+      </div>
+    </div>
+
+    <div class="container pb-5">
+      <div class="row g-4">
+        <!-- Users Collection -->
+        <div class="col-md-6 col-lg-6">
+          <div class="schema-card card-users">
+            <div class="card-header">
+              Users
+              <span class="collection-badge">Collection</span>
+            </div>
+            <div class="card-body">
+              <div class="field-row">
+                <span class="field-name">+ _id</span>
+                <span class="field-type type-objectid">ObjectId</span>
+                <span class="field-desc">Unique identifier</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ firstName</span>
+                <span class="field-type type-string">String</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ lastName</span>
+                <span class="field-type type-string">String</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ dob</span>
+                <span class="field-type type-date">Date</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ gender</span>
+                <span class="field-type type-string">Char</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ dzongkhag</span>
+                <span class="field-type type-string">String</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ gewog</span>
+                <span class="field-type type-string">String</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ contact</span>
+                <span class="field-type type-object">Object</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ role</span>
+                <span class="field-type type-enum">Enum</span>
+                <span class="field-desc">doctor | patient</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ specialization</span>
+                <span class="field-type type-string">String</span>
+                <span class="optional">OPTIONAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medicines Collection -->
+        <div class="col-md-6 col-lg-6">
+          <div class="schema-card card-meds">
+            <div class="card-header">
+              Medicines
+              <span class="collection-badge">Collection</span>
+            </div>
+            <div class="card-body">
+              <div class="field-row">
+                <span class="field-name">+ _id</span>
+                <span class="field-type type-objectid">ObjectId</span>
+                <span class="field-desc">Unique identifier</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ name</span>
+                <span class="field-type type-string">String</span>
+                <span class="field-desc">Name of the medicine</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Records Collection -->
+        <div class="col-md-6 col-lg-6">
+          <div class="schema-card card-recs">
+            <div class="card-header">
+              Records
+              <span class="collection-badge">Collection</span>
+            </div>
+            <div class="card-body">
+              <div class="field-row">
+                <span class="field-name">+ _id</span>
+                <span class="field-type type-objectid">ObjectId</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ recordedAt</span>
+                <span class="field-type type-date">Date</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ patient</span>
+                <span class="field-type type-object">Object</span>
+                <span class="field-desc">{ id, name }</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ doctor</span>
+                <span class="field-type type-object">Object</span>
+                <span class="field-desc">{ id, name, specialization }</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ medicine</span>
+                <span class="field-type type-array">Array</span>
+                <span class="field-desc">[{ id, name, duration }]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Appointments Collection -->
+        <div class="col-md-6 col-lg-6">
+          <div class="schema-card card-apps">
+            <div class="card-header">
+              Appointments
+              <span class="collection-badge">Collection</span>
+            </div>
+            <div class="card-body">
+              <div class="field-row">
+                <span class="field-name">+ _id</span>
+                <span class="field-type type-objectid">ObjectId</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ date</span>
+                <span class="field-type type-date">Date</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ time</span>
+                <span class="field-type type-date">Time</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ status</span>
+                <span class="field-type type-enum">Enum</span>
+                <span class="field-desc">pending | confirmed | cancelled</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ title</span>
+                <span class="field-type type-string">String</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ doctor</span>
+                <span class="field-type type-object">Object</span>
+                <span class="field-desc">{ id, name }</span>
+              </div>
+              <div class="field-row">
+                <span class="field-name">+ patient</span>
+                <span class="field-type type-object">Object</span>
+                <span class="field-desc">{ id, name }</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

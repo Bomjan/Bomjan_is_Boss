@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoSQL Database Class Diagram</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-color: #fdfbf7;
+        --text-primary: #334155;
+        --text-secondary: #64748b;
+        
+        /* Soft Colors matching data-flow.html */
+        --primary: #f43f5e; /* Rose */
+        --primary-soft: #ffe4e6;
+        --secondary: #3b82f6; /* Blue */
+        --secondary-soft: #eff6ff;
+        --success: #10b981; /* Emerald */
+        --success-soft: #d1fae5;
+        --warning: #f59e0b; /* Amber */
+        --warning-soft: #fef3c7;
+        --purple: #8b5cf6;
+        --purple-soft: #ede9fe;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 32px 32px;
+        font-family: "Outfit", sans-serif;
+        color: var(--text-primary);
+        overflow-x: hidden;
+      }
+
+      .container-fluid {
+        max-width: 1800px;
+        padding: 60px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 80px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px);
+        padding: 60px;
+        border-radius: 48px;
+        border: 4px solid white;
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
+      }
+
+      .header h1 {
+        font-weight: 800;
+        color: var(--text-primary);
+        letter-spacing: -0.03em;
+        font-size: 3.5rem;
+        margin-bottom: 16px;
+      }
+      
+      .header p {
+        color: var(--text-secondary);
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+
+      .diagram-card {
+        background: white;
+        border-radius: 48px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+        padding: 80px;
+        border: 8px solid white;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .diagram-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 35px 60px -15px rgba(0,0,0,0.12);
+      }
+      
+      /* SVG Styling */
+      svg {
+        width: 100%;
+        height: auto;
+        max-width: 1400px; /* Limit max width to keep it readable */
+        font-family: "Outfit", sans-serif;
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+      }
+      
+      /* Class Boxes */
+      .class-box {
+        fill: white;
+        stroke: #f1f5f9;
+        stroke-width: 4;
+        filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.06));
+        transition: all 0.3s ease;
+      }
+      
+      .class-group:hover .class-box {
+        stroke: var(--secondary);
+        filter: drop-shadow(0px 15px 30px rgba(59, 130, 246, 0.15));
+      }
+      
+      /* Header Backgrounds */
+      .header-bg-users { fill: var(--warning-soft); } 
+      .header-bg-meds { fill: var(--success-soft); } 
+      .header-bg-recs { fill: var(--secondary-soft); } 
+      .header-bg-apps { fill: var(--purple-soft); }
+      
+      /* Header Text */
+      .header-text {
+        font-weight: 800;
+        font-size: 18px;
+        text-anchor: middle;
+        letter-spacing: -0.01em;
+      }
+      .header-text-users { fill: var(--warning); }
+      .header-text-meds { fill: var(--success); }
+      .header-text-recs { fill: var(--secondary); }
+      .header-text-apps { fill: var(--purple); }
+
+      /* Divider */
+      .class-divider {
+        stroke: #f1f5f9;
+        stroke-width: 3;
+      }
+      
+      /* Attributes */
+      .attribute {
+        fill: var(--text-primary);
+        font-size: 15px;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 500;
+      }
+      .type {
+        fill: var(--text-secondary);
+        font-weight: 700;
+        font-size: 12px;
+        opacity: 0.8;
+      }
+      
+      /* Relationships */
+      .relationship-line {
+        stroke: #cbd5e1;
+        stroke-width: 4;
+        fill: none;
+        stroke-linecap: round;
+        transition: stroke 0.3s;
+      }
+      
+      .class-group:hover ~ .relationship-line {
+        stroke: #94a3b8;
+      }
+      
+      .label-bg {
+        fill: white;
+        stroke: #e2e8f0;
+        stroke-width: 2;
+        rx: 12;
+      }
+      
+      .relationship-label {
+        fill: #64748b;
+        font-size: 12px;
+        font-weight: 800;
+        text-anchor: middle;
+        font-family: "Outfit", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="header">
+        <h1>NoSQL Database Class Diagram</h1>
+        <p>Schema Relationship Visualization</p>
+      </div>
+
+      <div class="diagram-card">
+        <svg viewBox="0 0 900 850" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+              <polygon points="0 0, 12 4, 0 8" fill="#cbd5e1" />
+            </marker>
+          </defs>
+
+          <!-- Users Class (Top Left) -->
+          <g class="class-group" transform="translate(50, 50)">
+            <!-- Card Body -->
+            <rect class="class-box" x="0" y="0" width="280" height="260" rx="24" />
+            <!-- Header -->
+            <path d="M 0 24 A 24 24 0 0 1 24 0 L 256 0 A 24 24 0 0 1 280 24 L 280 60 L 0 60 Z" class="header-bg-users" />
+            <text class="header-text header-text-users" x="140" y="38">Users</text>
+            <line class="class-divider" x1="0" y1="60" x2="280" y2="60" />
+            
+            <!-- Attributes -->
+            <g transform="translate(24, 90)">
+              <text class="attribute" y="0">_id: <tspan class="type">ObjectId</tspan></text>
+              <text class="attribute" y="30">firstName: <tspan class="type">String</tspan></text>
+              <text class="attribute" y="60">lastName: <tspan class="type">String</tspan></text>
+              <text class="attribute" y="90">dob: <tspan class="type">Date</tspan></text>
+              <text class="attribute" y="120">role: <tspan class="type">Enum</tspan></text>
+              <text class="attribute" y="150">specialization: <tspan class="type">String</tspan></text>
+            </g>
+          </g>
+
+          <!-- Medicines Class (Top Right) -->
+          <g class="class-group" transform="translate(570, 50)">
+            <rect class="class-box" x="0" y="0" width="280" height="160" rx="24" />
+            <path d="M 0 24 A 24 24 0 0 1 24 0 L 256 0 A 24 24 0 0 1 280 24 L 280 60 L 0 60 Z" class="header-bg-meds" />
+            <text class="header-text header-text-meds" x="140" y="38">Medicines</text>
+            <line class="class-divider" x1="0" y1="60" x2="280" y2="60" />
+            
+            <g transform="translate(24, 90)">
+              <text class="attribute" y="0">_id: <tspan class="type">ObjectId</tspan></text>
+              <text class="attribute" y="30">name: <tspan class="type">String</tspan></text>
+            </g>
+          </g>
+
+          <!-- Records Class (Center) -->
+          <g class="class-group" transform="translate(310, 340)">
+            <rect class="class-box" x="0" y="0" width="280" height="240" rx="24" />
+            <path d="M 0 24 A 24 24 0 0 1 24 0 L 256 0 A 24 24 0 0 1 280 24 L 280 60 L 0 60 Z" class="header-bg-recs" />
+            <text class="header-text header-text-recs" x="140" y="38">Records</text>
+            <line class="class-divider" x1="0" y1="60" x2="280" y2="60" />
+            
+            <g transform="translate(24, 90)">
+              <text class="attribute" y="0">_id: <tspan class="type">ObjectId</tspan></text>
+              <text class="attribute" y="30">recordedAt: <tspan class="type">Date</tspan></text>
+              <text class="attribute" y="60">patient: <tspan class="type">Object</tspan></text>
+              <text class="attribute" y="90">doctor: <tspan class="type">Object</tspan></text>
+              <text class="attribute" y="120">medicine: <tspan class="type">Array</tspan></text>
+            </g>
+          </g>
+
+          <!-- Appointments Class (Bottom) -->
+          <g class="class-group" transform="translate(310, 630)">
+            <rect class="class-box" x="0" y="0" width="280" height="170" rx="24" />
+            <path d="M 0 24 A 24 24 0 0 1 24 0 L 256 0 A 24 24 0 0 1 280 24 L 280 60 L 0 60 Z" class="header-bg-apps" />
+            <text class="header-text header-text-apps" x="140" y="38">Appointments</text>
+            <line class="class-divider" x1="0" y1="60" x2="280" y2="60" />
+            
+            <g transform="translate(24, 90)">
+              <text class="attribute" y="0">_id: <tspan class="type">ObjectId</tspan></text>
+              <text class="attribute" y="30">date: <tspan class="type">Date</tspan></text>
+              <text class="attribute" y="60">status: <tspan class="type">Enum</tspan></text>
+            </g>
+          </g>
+
+          <!-- Relationships -->
+          
+          <!-- Users -> Records (Curved) -->
+          <path class="relationship-line" d="M 190 310 C 190 440, 310 440, 310 440" marker-end="url(#arrowhead)" />
+          <rect class="label-bg" x="210" y="415" width="80" height="24" />
+          <text class="relationship-label" x="250" y="432">has many</text>
+
+          <!-- Medicines -> Records (Curved) -->
+          <path class="relationship-line" d="M 710 210 C 710 440, 590 440, 590 440" marker-end="url(#arrowhead)" />
+          <rect class="label-bg" x="610" y="415" width="80" height="24" />
+          <text class="relationship-label" x="650" y="432">has many</text>
+
+          <!-- Records -> Appointments (Straight) -->
+          <path class="relationship-line" d="M 450 580 L 450 630" marker-end="url(#arrowhead)" />
+          <rect class="label-bg" x="410" y="593" width="80" height="24" />
+          <text class="relationship-label" x="450" y="610">has many</text>
+
+        </svg>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

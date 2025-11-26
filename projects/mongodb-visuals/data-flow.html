@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Flow & CRUD Visualization</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+      :root {
+        --bg-color: #fdfbf7;
+        --text-primary: #334155;
+        --text-secondary: #64748b;
+        
+        /* Soft Colors */
+        --primary: #f43f5e; /* Rose */
+        --primary-soft: #ffe4e6;
+        --secondary: #3b82f6; /* Blue */
+        --secondary-soft: #eff6ff;
+        --success: #10b981; /* Emerald */
+        --success-soft: #d1fae5;
+        --warning: #f59e0b; /* Amber */
+        --warning-soft: #fef3c7;
+        --purple: #8b5cf6;
+        --purple-soft: #ede9fe;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 32px 32px;
+        font-family: "Outfit", sans-serif;
+        color: var(--text-primary);
+        overflow-x: hidden;
+      }
+      
+      .container-fluid {
+        max-width: 1800px;
+        padding: 60px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 80px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px);
+        padding: 60px;
+        border-radius: 48px;
+        border: 4px solid white;
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
+      }
+
+      .header h1 {
+        font-weight: 800;
+        color: var(--text-primary);
+        letter-spacing: -0.03em;
+        font-size: 3.5rem;
+        margin-bottom: 16px;
+      }
+      
+      .header p {
+        color: var(--text-secondary);
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+
+      /* Cards */
+      .app-card {
+        background: white;
+        border-radius: 40px;
+        box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08);
+        border: 8px solid white;
+        height: 100%;
+        min-height: 700px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .app-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 35px 60px -15px rgba(0,0,0,0.12);
+      }
+      
+      .card-header {
+        padding: 32px 40px;
+        font-weight: 800;
+        font-size: 1.5rem;
+        border-bottom: 3px solid #f1f5f9;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* Form Styling */
+      .form-card { outline: 3px solid var(--primary-soft); }
+      .form-card .card-header { background-color: var(--primary-soft); color: var(--primary); }
+      
+      .form-control, .form-select {
+        border-radius: 20px;
+        border: 3px solid #f1f5f9;
+        padding: 20px 24px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.2s;
+        background-color: #f8fafc;
+        margin-bottom: 10px;
+      }
+      
+      .form-control:focus, .form-select:focus {
+        border-color: var(--primary-soft);
+        background-color: white;
+        box-shadow: 0 0 0 6px rgba(244, 63, 94, 0.15);
+      }
+      
+      .form-label {
+        font-weight: 700;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 12px;
+        margin-left: 8px;
+      }
+      
+      .btn-action {
+        border: none;
+        border-radius: 24px;
+        padding: 24px;
+        font-weight: 800;
+        width: 100%;
+        margin-top: 32px;
+        transition: all 0.2s;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 1.1rem;
+      }
+      
+      .btn-create {
+        background: linear-gradient(135deg, #f43f5e, #e11d48);
+        color: white;
+        box-shadow: 0 15px 30px -5px rgba(225, 29, 72, 0.4);
+      }
+      
+      .btn-update {
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+        color: white;
+        box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.4);
+        display: none;
+      }
+      
+      .btn-action:hover { filter: brightness(1.1); transform: translateY(-2px); }
+      .btn-action:active { transform: scale(0.98) translateY(0); }
+
+      /* Query Preview Styling */
+      .query-card { outline: 3px solid var(--purple-soft); }
+      .query-card .card-header { background-color: var(--purple-soft); color: var(--purple); }
+      
+      .query-display {
+        background: #0f172a;
+        color: #a5b4fc;
+        padding: 40px;
+        border-radius: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 1.1rem;
+        min-height: 300px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        position: relative;
+        box-shadow: inset 0 4px 20px rgba(0,0,0,0.3);
+        overflow: hidden;
+      }
+      
+      .query-content {
+        width: 100%;
+        white-space: pre-wrap;
+        line-height: 1.8;
+        z-index: 1;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 12px;
+        height: 1.2em;
+        background-color: #a5b4fc;
+        margin-left: 4px;
+        vertical-align: middle;
+        animation: blink 1s step-end infinite;
+      }
+      
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      
+      .query-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255,255,255,0.1);
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        color: #94a3b8;
+        font-weight: 700;
+        z-index: 2;
+        letter-spacing: 0.05em;
+      }
+
+      /* Database Styling */
+      .db-card { outline: 3px solid var(--success-soft); }
+      .db-card .card-header { background-color: var(--success-soft); color: var(--success); }
+      
+      .db-content {
+        padding: 32px;
+        flex-grow: 1;
+        background-color: #f8fafc;
+        overflow-y: auto;
+        max-height: 800px;
+      }
+      
+      .document-item {
+        background: white;
+        border-radius: 24px;
+        padding: 28px;
+        margin-bottom: 20px;
+        border: 3px solid #f1f5f9;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.95rem;
+        position: relative;
+        transition: all 0.2s;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+      }
+      
+      .document-item:hover {
+        border-color: var(--success-soft);
+        transform: scale(1.01);
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+      }
+      
+      .doc-data { flex: 1; line-height: 1.8; }
+      .doc-actions {
+        display: flex;
+        gap: 12px;
+        opacity: 0.4;
+        transition: opacity 0.2s;
+      }
+      .document-item:hover .doc-actions { opacity: 1; }
+      
+      .btn-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 1.1rem;
+      }
+      
+      .btn-edit { background: var(--secondary-soft); color: var(--secondary); }
+      .btn-edit:hover { background: var(--secondary); color: white; transform: rotate(10deg); }
+      
+      .btn-delete { background: var(--primary-soft); color: var(--primary); }
+      .btn-delete:hover { background: var(--primary); color: white; transform: rotate(-10deg); }
+
+      .doc-key { color: #94a3b8; font-weight: 600; }
+      .doc-val-string { color: #10b981; }
+      .doc-val-id { color: #f43f5e; }
+
+      /* Flying Packet */
+      .data-packet {
+        position: fixed;
+        background: white;
+        border: 4px solid var(--purple);
+        border-radius: 20px;
+        padding: 16px 28px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 1rem;
+        color: var(--text-primary);
+        box-shadow: 0 20px 50px rgba(139, 92, 246, 0.4);
+        z-index: 1000;
+        pointer-events: none;
+        display: none;
+        white-space: nowrap;
+        transform: translate(-50%, -50%);
+      }
+      
+      .packet-label {
+        font-weight: 800;
+        color: var(--purple);
+        display: block;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+
+      /* Arrows */
+      .arrow-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #cbd5e1;
+        font-size: 4rem;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="header">
+        <h1>MongoDB CRUD Visualization</h1>
+        <p>Interactive Data Flow: Form ➔ Query ➔ Collection</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1. Form (Create/Update) -->
+        <div class="col-lg-3">
+          <div class="app-card form-card">
+            <div class="card-header">
+              <span>User Form</span>
+              <i class="bi bi-ui-checks"></i>
+            </div>
+            <div class="p-4 d-flex flex-column h-100 justify-content-center">
+              <form id="userForm" onsubmit="return false;">
+                <input type="hidden" id="userId">
+                <div class="mb-4">
+                  <label class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="e.g. Tashi" required>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="e.g. Dorji" required>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label">Role</label>
+                  <select class="form-select" id="role">
+                    <option value="Patient">Patient</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Admin">Admin</option>
+                  </select>
+                </div>
+                <button class="btn-action btn-create" id="btnCreate" onclick="handleCreate()">
+                  <i class="bi bi-plus-lg me-2"></i>Create User
+                </button>
+                <button class="btn-action btn-update" id="btnUpdate" onclick="handleUpdate()">
+                  <i class="bi bi-arrow-repeat me-2"></i>Update User
+                </button>
+                <button class="btn btn-link text-muted w-100 mt-2" id="btnCancel" style="display:none" onclick="resetForm()">
+                  Cancel
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow 1 -->
+        <div class="col-lg-1 d-none d-lg-flex arrow-container">
+          <i class="bi bi-arrow-right-circle-fill"></i>
+        </div>
+
+        <!-- 2. Query Visualization -->
+        <div class="col-lg-4">
+          <div class="app-card query-card">
+            <div class="card-header">
+              <span>Query Preview</span>
+              <i class="bi bi-code-square"></i>
+            </div>
+            <div class="p-4 d-flex flex-column h-100 justify-content-center">
+              <div class="query-display" id="queryDisplay">
+                <div class="query-content">
+                  <span class="text-muted opacity-50">// MongoDB Query will appear here...</span>
+                </div>
+                <div class="query-badge">MONGOSH</div>
+              </div>
+              <div class="text-center mt-3 text-muted small">
+                <i class="bi bi-info-circle me-1"></i>
+                This is what gets sent to the database
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow 2 -->
+        <div class="col-lg-1 d-none d-lg-flex arrow-container">
+          <i class="bi bi-arrow-right-circle-fill"></i>
+        </div>
+
+        <!-- 3. Database Collection -->
+        <div class="col-lg-3">
+          <div class="app-card db-card">
+            <div class="card-header">
+              <span>Users Collection</span>
+              <i class="bi bi-database"></i>
+            </div>
+            <div class="db-content" id="dbContent">
+              <div class="text-center text-muted mt-5" id="emptyState">
+                <i class="bi bi-inbox fs-1 opacity-25 mb-3 d-block"></i>
+                <small>Collection is empty</small>
+              </div>
+              <!-- Documents go here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flying Packet -->
+    <div id="flyingPacket" class="data-packet">
+      <span class="packet-label">JSON Data</span>
+      <div id="packetContent"></div>
+    </div>
+
+    <script>
+      // State
+      let users = [];
+      const dbContent = document.getElementById('dbContent');
+      const emptyState = document.getElementById('emptyState');
+      const queryDisplay = document.getElementById('queryDisplay');
+      const packet = document.getElementById('flyingPacket');
+      const packetContent = document.getElementById('packetContent');
+
+      // Helper: Generate ID
+      function generateObjectId() {
+        return '65' + Math.random().toString(16).substr(2, 22);
+      }
+
+      // 1. CREATE
+      function handleCreate() {
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const role = document.getElementById('role').value;
+
+        if (!firstName || !lastName) return;
+
+        const newUser = {
+          _id: generateObjectId(),
+          firstName,
+          lastName,
+          role
+        };
+
+        // Animation Flow: Form -> Query -> DB
+        animateFlow(
+          'create',
+          newUser,
+          document.getElementById('btnCreate'),
+          `db.users.insertOne({\n  firstName: "${firstName}",\n  lastName: "${lastName}",\n  role: "${role}"\n})`,
+          () => {
+            users.unshift(newUser);
+            renderUsers();
+            resetForm();
+          }
+        );
+      }
+
+      // 2. READ (Render)
+      function renderUsers() {
+        if (users.length === 0) {
+          emptyState.style.display = 'block';
+          dbContent.innerHTML = '';
+          dbContent.appendChild(emptyState);
+          return;
+        }
+        
+        emptyState.style.display = 'none';
+        dbContent.innerHTML = '';
+        dbContent.appendChild(emptyState);
+
+        users.forEach(user => {
+          const el = document.createElement('div');
+          el.className = 'document-item';
+          el.id = `doc-${user._id}`;
+          el.innerHTML = `
+            <div class="doc-data">
+              <div><span class="doc-key">_id:</span> <span class="doc-val-id">ObjectId("${user._id.substr(0, 8)}...")</span></div>
+              <div><span class="doc-key">firstName:</span> <span class="doc-val-string">"${user.firstName}"</span></div>
+              <div><span class="doc-key">lastName:</span> <span class="doc-val-string">"${user.lastName}"</span></div>
+              <div><span class="doc-key">role:</span> <span class="doc-val-string">"${user.role}"</span></div>
+            </div>
+            <div class="doc-actions">
+              <button class="btn-icon btn-edit" onclick="startEdit('${user._id}')" title="Edit">
+                <i class="bi bi-pencil-fill"></i>
+              </button>
+              <button class="btn-icon btn-delete" onclick="handleDelete('${user._id}')" title="Delete">
+                <i class="bi bi-trash-fill"></i>
+              </button>
+            </div>
+          `;
+          dbContent.appendChild(el);
+        });
+      }
+
+      // 3. UPDATE (Start)
+      function startEdit(id) {
+        const user = users.find(u => u._id === id);
+        if (!user) return;
+
+        document.getElementById('userId').value = user._id;
+        document.getElementById('firstName').value = user.firstName;
+        document.getElementById('lastName').value = user.lastName;
+        document.getElementById('role').value = user.role;
+
+        // Toggle Buttons
+        document.getElementById('btnCreate').style.display = 'none';
+        document.getElementById('btnUpdate').style.display = 'block';
+        document.getElementById('btnCancel').style.display = 'block';
+        
+        // Highlight Form
+        document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // 3. UPDATE (Submit)
+      function handleUpdate() {
+        const id = document.getElementById('userId').value;
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const role = document.getElementById('role').value;
+
+        const updatedData = { firstName, lastName, role };
+
+        animateFlow(
+          'update',
+          updatedData,
+          document.getElementById('btnUpdate'),
+          `db.users.updateOne(\n  { _id: ObjectId("${id}") },\n  { $set: { firstName: "${firstName}", ... } }\n)`,
+          () => {
+            const idx = users.findIndex(u => u._id === id);
+            if (idx !== -1) {
+              users[idx] = { ...users[idx], ...updatedData };
+              renderUsers();
+              resetForm();
+            }
+          }
+        );
+      }
+
+      // 4. DELETE
+      function handleDelete(id) {
+        const user = users.find(u => u._id === id);
+        const docEl = document.getElementById(`doc-${id}`);
+        
+        animateFlow(
+          'delete',
+          { _id: id },
+          docEl, // Start from the document itself
+          `db.users.deleteOne(\n  { _id: ObjectId("${id}") }\n)`,
+          () => {
+            users = users.filter(u => u._id !== id);
+            renderUsers();
+          }
+        );
+      }
+
+      // Reset Form
+      function resetForm() {
+        document.getElementById('userForm').reset();
+        document.getElementById('userId').value = '';
+        document.getElementById('btnCreate').style.display = 'block';
+        document.getElementById('btnUpdate').style.display = 'none';
+        document.getElementById('btnCancel').style.display = 'none';
+      }
+
+      // MAIN ANIMATION CONTROLLER
+      function animateFlow(type, data, startEl, queryText, onComplete) {
+        // 1. Setup Packet
+        packetContent.innerHTML = JSON.stringify(data).substring(0, 20) + '...';
+        packet.style.display = 'block';
+        
+        const startRect = startEl.getBoundingClientRect();
+        const queryRect = document.querySelector('.query-card').getBoundingClientRect();
+        const dbRect = document.querySelector('.db-card').getBoundingClientRect();
+
+        // Initial Pos
+        setPacketPos(startRect);
+
+        // Step 1: Fly to Query Card
+        animateTo(startRect, queryRect, 600, () => {
+          // Hide packet so it doesn't cover the query text
+          packet.style.display = 'none';
+          
+          // Show Query
+          typeText(queryText, () => {
+            // Wait a bit
+            setTimeout(() => {
+              // Show packet again for the next leg
+              packet.style.display = 'block';
+              setPacketPos(queryRect); // Reset position just in case
+              
+              // Step 2: Fly to DB
+              animateTo(queryRect, dbRect, 600, () => {
+                packet.style.display = 'none';
+                resetQueryDisplay();
+                onComplete();
+              });
+            }, 1000); // Wait 1s before flying to DB
+          });
+        });
+      }
+
+      function setPacketPos(rect) {
+        packet.style.top = rect.top + (rect.height/2) + 'px';
+        packet.style.left = rect.left + (rect.width/2) + 'px';
+      }
+
+      function animateTo(startRect, endRect, duration, callback) {
+        const startTime = performance.now();
+        
+        function step(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3); // Cubic ease out
+
+          const startX = startRect.left + (startRect.width/2);
+          const startY = startRect.top + (startRect.height/2);
+          const endX = endRect.left + (endRect.width/2);
+          const endY = endRect.top + (endRect.height/2);
+
+          const currentX = startX + (endX - startX) * ease;
+          const currentY = startY + (endY - startY) * ease;
+
+          packet.style.left = currentX + 'px';
+          packet.style.top = currentY + 'px';
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            callback();
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      function resetQueryDisplay() {
+        queryDisplay.innerHTML = '<div class="query-content"><span class="text-muted opacity-50">// Waiting for action...</span></div><div class="query-badge">MONGOSH</div>';
+      }
+
+      function typeText(text, callback) {
+        // Reset with blinking cursor
+        queryDisplay.innerHTML = '<div class="query-content"></div><div class="query-badge">MONGOSH</div>';
+        const contentDiv = queryDisplay.querySelector('.query-content');
+        
+        let i = 0;
+        // Slower typing: 30ms instead of 10ms
+        const interval = setInterval(() => {
+          // Update content with text + cursor
+          const currentText = text.substring(0, i + 1);
+          contentDiv.innerHTML = currentText + '<span class="cursor"></span>';
+          
+          i++;
+          if (i >= text.length) {
+            clearInterval(interval);
+            callback();
+          }
+        }, 80); 
+      }
+    </script>
+  </body>
+</html>
